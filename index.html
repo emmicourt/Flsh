@@ -191,6 +191,25 @@
       </ul>
     </div>
 
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-messaging.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBIoV3sdNddIH7evKdUWV7C1FnsP5XOFhU",
+      authDomain: "flsh-2e97b.firebaseapp.com",
+      databaseURL: "https://flsh-2e97b.firebaseio.com",
+      projectId: "flsh-2e97b",
+      storageBucket: "flsh-2e97b.appspot.com",
+      messagingSenderId: "271725250097"
+    };
+    firebase.initializeApp(config);
+  </script>
 
    <!-- Compressed CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" integrity="sha256-itWEYdFWzZPBG78bJOOiQIn06QCgN/F0wMDcC4nOhxY=" crossorigin="anonymous" />
