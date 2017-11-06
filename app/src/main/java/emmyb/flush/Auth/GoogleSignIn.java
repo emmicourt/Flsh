@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -14,6 +15,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
@@ -37,10 +40,21 @@ public class GoogleSignIn extends FragmentActivity implements
     private GoogleApiClient mGoogleApiClient;
     private FirebaseAuth mAuth;
 
+    private TextView mStatusTextView;
+    private TextView mDetailTextView;
+
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+
+        mStatusTextView = findViewById(R.id.status);
+        mDetailTextView = findViewById(R.id.detail);
+
+        // Button listeners
+        findViewById(R.id.sign_in_button).setOnClickListener(this);
+        findViewById(R.id.sign_out_button).setOnClickListener(this);
+        findViewById(R.id.disconnect_button).setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -67,18 +81,6 @@ public class GoogleSignIn extends FragmentActivity implements
     }
 
     @Override
-    public void onClick(View v) {
-        int i = v.getId();
-        if (i == R.id.sign_in_button) {
-            signIn();
-        } else if (i == R.id.sign_out_button) {
-            signOut();
-        } else if (i == R.id.disconnect_button) {
-            revokeAccess();
-        }
-    }
-
-    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -91,12 +93,23 @@ public class GoogleSignIn extends FragmentActivity implements
                 firebaseAuthWithGoogle(account);
             } else {
                 // Google Sign In failed, update UI appropriately
-                // ...
+                updateUI(null);
             }
         }
     }
 
     private void revokeAccess() {
+        // Firebase sign out
+        mAuth.signOut();
+
+        // Google revoke access
+        Auth.GoogleSignInApi.revokeAccess(mGoogleApiClient).setResultCallback(
+                new ResultCallback<Status>() {
+                    @Override
+                    public void onResult(@NonNull Status status) {
+                        updateUI(null);
+                    }
+                });
     }
 
     @Override
@@ -104,7 +117,7 @@ public class GoogleSignIn extends FragmentActivity implements
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        //updateUI(currentUser);
+        updateUI(currentUser);
     }
 
     private void signOut(){
@@ -128,17 +141,33 @@ public class GoogleSignIn extends FragmentActivity implements
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            //updateUI(user);
+                            updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             Toast.makeText(GoogleSignIn.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            //updateUI(null);
+                            updateUI(null);
                         }
 
                         // ...
                     }
                 });
+    }
+
+    private void updateUI(FirebaseUser user){
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        int i = v.getId();
+        if (i == R.id.sign_in_button) {
+            signIn();
+        } else if (i == R.id.sign_out_button) {
+            signOut();
+        } else if (i == R.id.disconnect_button) {
+            revokeAccess();
+        }
     }
 }
