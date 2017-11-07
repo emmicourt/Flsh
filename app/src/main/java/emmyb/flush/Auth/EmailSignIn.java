@@ -34,7 +34,7 @@ public class EmailSignIn extends FragmentActivity implements View.OnClickListene
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
+        setContentView(R.layout.activity_intial_screen);
 
         // Views
         mStatusTextView = findViewById(R.id.status);
