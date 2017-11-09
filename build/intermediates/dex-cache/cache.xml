@@ -93,6 +93,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\oli\.android\build-cache\3beee98f28f0e101da67f22a8fad344e977ad267\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a37fc31c5ceeaa4532a37358add1b189d8db4af1">
+        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_b46edf0c408bfb05b17266485ce0422330936a81.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\oli\.android\build-cache\11050db43b3470aea92439c4246c4b698d6dbd44\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -210,12 +219,30 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\oli\.android\build-cache\93d5963097f2315d6c881786ff3057c8ba53d2f1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="58b12bdb21a84f22e0dc3b047aeceb0a546b1b44">
+        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_8782de4dd0a2eb9f01e6c0317417999e0c694f9f.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\oli\.android\build-cache\89f25e3e3dc39a17080e08199d098a1fab974364\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="40392f30a601db5675cdf18192aab013d6fee6ec">
         <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_9a6de7fe6c2695880f5871440a14059cae889476.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\oli\.android\build-cache\d17c9db9b78c85d34b0cd3e472ed1683a23a051e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b12cd9c87c3dfb012a911b6e38d2444ed0a65e1f">
+        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_4aca019e823f6ee500d7c25c429637c7c1b0c33a.jar" />
     </item>
     <item
         is-multidex="false"
