@@ -11,8 +11,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
+        android:entries="@array/Options"
         app:layout_constraintLeft_toLeftOf="parent"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="26dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="login"
+        tools:layout_editor_absoluteX="276dp"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sign in"
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="2dp" />
+
 
 </android.support.constraint.ConstraintLayout>
