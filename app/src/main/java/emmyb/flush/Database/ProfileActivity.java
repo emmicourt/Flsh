@@ -52,9 +52,6 @@ public class ProfileActivity extends FragmentActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
                Profile profile = dataSnapshot.getValue(Profile.class);
-                // [START_EXCLUDE]
-
-                // [END_EXCLUDE]
             }
 
             @Override
