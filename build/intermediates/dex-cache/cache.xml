@@ -120,21 +120,21 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="aa08b62595bcf68389eec6108f3210696eb709fb">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8781debe84869c145a1e97f6c72aba6cb8b99fbc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/EmmyB/.android/build-cache/88acef570df45648901da9c65460eaba6c28afea/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
         sha1="40392f30a601db5675cdf18192aab013d6fee6ec">
         <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_81e2e25a732ca1932c29dd8420a844a5e8942d40/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="2e9bdefd64d2f9a11215f7378727ef00b04f6558">
-        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8781debe84869c145a1e97f6c72aba6cb8b99fbc/classes.dex" />
     </item>
     <item
         is-multidex="true"
