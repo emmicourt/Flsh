@@ -5,9 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 public class IntialScreen extends AppCompatActivity {
+    public static final String EXTRA_MESSAGE = "emmyb.flush";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +37,6 @@ public class IntialScreen extends AppCompatActivity {
                         intent = new Intent(IntialScreen.this, ProfileScreen.class);
                         break;
                 }
-
-
             }
 
             @Override
@@ -46,5 +46,9 @@ public class IntialScreen extends AppCompatActivity {
             }
 
         });
+    }
+    public void sendMessage(View view){
+        Intent login = new Intent(this, LoginActivity.class);
+        startActivity(login);
     }
 }
