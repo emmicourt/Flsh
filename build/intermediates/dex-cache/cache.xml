@@ -3,12 +3,498 @@
 
     <item
         is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/b28484ee3d3a4c83e2cb6f006fdec18cb36e418d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="767b85989de73cb665e14510ff2657ef979241f9">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_db2d9387069d2e1ee67bc55885a4f3711175fb03/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/6717ab21585997e6364b612b8c6aea916c41db97/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6987a74958e42b559fd0eacef972173f59ba93bb">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b718f83224917706491e7bcefc164397b0fea6f8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/2116551479e83562f16d519a4bcc10028845776c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="31aafe75ac42184d700ec3f862bf735c33ba201a">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_811c19c3a0bc1c22c1a2707a78dd477c20081250/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/bc40f93a57b24930e528559e68b5f3f8094baa9a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e82b33733f801187c5b502d56fe1e3014de84b71">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3ef7f6e3906c9521ad1214a7f1fd83d882a6d45f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/2fc57a122087c2c26ccd5b5eed9cf598d8edf078/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="36a6c288ed760d2d899126fa90761b84af10dd2d">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_fabc0f8431678379134d81f2e09245321ce7d932/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/09722189e18b462ba32304cd5a243f18471310f3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="0a3ae2ca8e64cdda4ae59aef07e33226cb950f5c">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d67dfd648182cf89d9fcac8ce1edf1449e9a7604/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/88a4e56db47a3fc0a47870b06dc203c81f184cc6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="57717bc4b81722a9c3e481fc6f150a950afd550c">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6059afd1a0ebf894f6ad95ddf31ce5266e7da428/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/3400f9b3e93a81bdd76ce381f8b0b9d005811d21/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="cad6f251cba07624f49b0c5b6287731a3c9957b8">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f3c807bb8a94556bd1dfd8de4aac9df97b417575/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/2b85a5dbaa2a0f2bdce9ec5b7cfc4ab03f467280/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="fc10e35f477578b1766c883d4a8561c207684531">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a4707662933fa9b263e18ffe4d92a3d8c3fc4d3a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/90652d988f9d02ff2bfae812c5b7abf43caea4d6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="9c80e982366ff105ce567a3e536cb77ae4981ade">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2566a6e34d876c74ba80742df093faa7759ef80d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/8cb03c68ad09fa9f13bfcfd68979b028e4242f0d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2df69841cd9793d6bfa2f78b7b7f4ea06d2296a7">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c254d8dae6050dec2d1421f997d4055fc9f8e6bd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/f6710c7c043e10ebac3333a5f66872b328f70ab6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="00e57da8e7efba5e0aead2d3c76201d86918a0d1">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_28e3cbb04950083561b246ac02d41f98b426244b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_218f6be07bbdf675737692c42d5924751a59a220/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/131e8f88898ffd2ed81d715005e6f55b473fa648/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="83f83593e58b678e8e6b8db6cf1fd8fe0e22dfe1">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c49e7ea8655e5dced521bb0d189d4c62ef26b583/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/0fb561614b0e375fd106ce2dd78ad04a32124082/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f5e24e901834850335a8bb7d95cf51ea1468a32a">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4d098fa314efe985e2496e9b0c10d735be952739/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/619a717219cba364e98349787f974ad04debbae5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="01a590e11a94cb7f5c8b1243d4a2783eab4d0a34">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b40e6d9508faf554c666c3661d9a091678ceff1b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/b7b6b42b8cc8787ff98b5cd3eeb5ea778176c22c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d1a80b23cc4097106a3f4914928e700ac3c5b2ed">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b4c555ada896bdf8b0910a20c5d2387cfcd84a4c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/3685e3daec50f1bc0effd0d4b3b29995adf5f45b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="171b54791d6ecec42ffc943bf9ea1a363ff6ab4f">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f23848a1236360e7f1f48ac781505d5665f6a80e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/0c0bf3edb6d0953a18bbca849feebff4209820bc/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="539c74d461960397d4c3f72623c72eb766569075">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5c5faf168488b359e12d82cb4fcd5f9340e0807b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/f6124ad5a7a5636caf365b371d39c78df207786b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="132a3661719fdac703f2a6f6a7b178c85cfe3cc6">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_de588d1270d899c13934a2e7bebe9355fad5a527/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/ef41a9f2da5f1c22d0d48abc0e539daec5445ac7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a93a72fe5e0ac12f4a8ff35c5a6ed651e142d10a">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_33a8d311cb1c6e2b26c55225539109614ac88a4a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/c1f2a1d4a61fcf5a201caa7d72baf32ba00ca9b7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3227957f15e5f672f35758c028cf3b94fb39b56d">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c5116539d90e5664c89f41011c14f40ed6dde41d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/45166185f3691abe778688002b932ef2c928e89c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2a8ae88a3addcb045172d340c4d1e977cbd50c39">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b1406725fc691fa5ef6e7e3263a178a19aee8730/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/3d2cc39b4ce976be690ded4cd6992045ce0806ab/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="07b52724ade6a26fecb53090da1574913fc78639">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_78d5bb9f672a8074156dbd9a7ea3313ba4fb63f5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/430343c286a4a0a407b10d8625f36c0f7e81dc25/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a2a935bcf7d7c529f04dc89905d1ddf678d5e692">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9eac96ed8486555ad894fcd4e40ce8aae137c728/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/1cc3aa778ece823c15d48fb11c4468defeb66b98/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c839ceb2113b00249e896c1c02ae15cdd8380345">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3847e6b132a87c23ae41528cadca9f2024fc6582/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/d2623f5024bda1854541306015f9b2e176097170/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="694e2bf7a21fa46310a4a0309b9943060d573abe">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_bc79b57c864428486d4dc227f3e35d4abe6bb5a2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/aa7dc19053592625cdcd8a70c7ccb797cd933501/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="341fc0b4661ec63331b1d95d8ceaeb04f5fd25cd">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5832ccad8eaa9580decbbc4ae0ddad5ff52ebb95/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/414bf76661c13c3b57c4d4a33cf0f774233c67a8/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="af13a350b71b437ebf4be335d02a8f785c39b111">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5b731a23c098c63da8353e587843edcde929f22f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/6613d7bec73ffa50f43582c47dac7795f9e58676/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="010af21d7b95f7c975dd3d2fb2aa936a241b385b">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8cfc4b572b95dc205bc30012450d8c8332c7b51c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/ebff72415922002308b5b7d830949259f9c7ed3a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="56ae1b700bdd20fdf8c5347fadcc96228fc1bf16">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b062c2a2c5063252d55b44170b1bcfdfe6d8e1f6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/ac776aec58bafcf05ca47b5509631cc6de3645ae/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c478771eacdf8217e093a1b967b8152cfdaadc94">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_defaaedb9577db4a58f53b2f8e07422ece306978/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/b600f0ccb0790eb51719c4f54014a17b0672f86b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f779085940b4f3c80ea711dc24a36649f16f4cd5">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c333ddb2dd5b314e90df87e442e7d0387cdccfb1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/169276fa117fd615a34486f26a27724b40a40994/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="bd362e8a7451fb70f9d28498949c1be35e5a2e6e">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f04876849ba4bbb4e29fed7c11b991ca2f53e80f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/92e2683d67c211cba1caaad4bc7fa243db6fa42c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="9be5e957849eb82ad9addf9bdb2896de8bf5654b">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_777875c5155a2e8b6fe17ea39e9d2ed7ac654256/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/516cb9da8131439b1534844ff4369fbfcc998a16/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="76a7a625df0e9027b53dbed6e9ba9a6031a42e39">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1993474a3b4e26dbbad78b3cdaeec740705e434b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/3cf331273d09fed77ae1c3f27168df9aa8cdb532/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="28ed270c519ff2874343e0824808da2efda0df9c">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7a08ebf03f008484abd091369a79a14cc0ca2c1f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="5b3410fe9250cee7d3efbae49cfc6e5d4fa51d18">
+        sha1="1055fd4fefe59b3aee81bcef6b68c185ac892d39">
         <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8781debe84869c145a1e97f6c72aba6cb8b99fbc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/7f232128084e25fa837fe7721689bc2864b1086f/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="67a51ae54d61ca318e61c73cdd9b27ec56af03bc">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_83dafae7a6359da0dce8487795cd150d762c9270/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/e9459481d7db910adca3c9dd7c21ff70846dbbbf/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="7b4dc2d9e39fb8ec5ddca9b3b3cb7c627690f3a6">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ebe8c3c890e53ae6408d19f58447a6af43f3ed0b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/2f6caca81f79c8af66cd353d243bb16cb9d3cc13/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="0c6b6b87687475583a7841926cfcadef96280483">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_67a6bf8d014ace1053fe54653091873b7af1505e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/23e310c4b17d3f9ce512f9fbf35d6e8349193be5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="7cf5def5a11365487219b912b2a7ba8ad26f9917">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_228a3c9409b17c68ba9385ad182509f1dfe79242/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/afafd3b53f510f9a81b0e3e3a00741af1cb381b3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d1e7ad8d5340b695e52cc5a14819f4264a4f4b8e">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_df3a172ab3d6d4ef94d58198af9d6b2daa1899c3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/03811fc18291731065b98a66154b22d8e273a93d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="41872d809cff2114169756aad6dcd593be2ecb59">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0dcb12d27e62fa5e1daaa0b6dc35911e5db40bfe/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/e9407234495a1d8c6d7b3aaa31ecfd9c688aa1b3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a3a0d55874ee03de768356d540983a20c95dd07a">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_cba0d22f5b42107a83b3489d17bd235f537cf58a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/c332ec281141121654aef2df3404c08d7145343a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="816a71eb5b0340d26db3056aa33f58dad108315b">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d9d30f6949595dd2e73619144d0556213dcd8a66/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/e10407a4e36270457507953c4258167d23a97f03/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="814b7c015442bfbedc29035e7afdfe383d893a03">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5465af0b8198d116e2e8014adcb0884115237d97/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/e7c5522a59a69732726b36f2d38a2ee09161306a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="9d151a92bb0af74ea6368e57ddf0e03c609155b4">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_79d2bd99316d10d3cfbe3a15bf296419378a56d6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/6107cdeb4cce8b57be41a0c7a088a2f7ada4a0ee/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="df812c448ef60fa0032ced451751ff98392b70a1">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_478b5bc850fbdd9d51fca1ae986aeea33583a102/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/00878b05c0508c50d31c327e9b9d84e51d55f552/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="edba0aec4aedd4edb3a520b4ee87adc52be762da">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3451db07dc8ba81ccc1464bc19849d5b646c130e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/c42642109ee28a09ad347275f64ca4d087fd1d8d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3da345d7c08a7e9d83a34d8723057624b941c0ea">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c22cc340fa8989c9eae60c24cb70d7797284cf4b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/7400449eb3c3f751c4db1b58194e424a07b35218/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="03589bac12234193d4a7a9b106a6db1b367afe99">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_757bde3c366fdd6a3adfba86e6be2ba773b55965/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/6e78e9875e13129fd9a4797ba7c8d03d5dcca023/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="103378d4e51581df4783e9e4a59a1775fe4f4104">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0420dc99045dc54a7a9819bab4685011a58f57dc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/b12967946e2a52e60a9afc2817b06d8e3baf9236/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6ff3baea295d5079a6b54538c8eab744ea72b4cc">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3f629f4b671f0fbe57202c9c8dabdc1274296a75/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/EmmyB/.android/build-cache/c09ad0883efae1b527d9fe1787460b44bc155d32/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c6a5692945e9d4bc34baddb4f7cb79070038f739">
+        <dex dex="/Users/EmmyB/Dropbox/CS115/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c185684bb42b6963a802d8ccad3310223b44b7c0/classes.dex" />
     </item>
 
 </items>
