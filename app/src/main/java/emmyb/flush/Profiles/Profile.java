@@ -43,7 +43,12 @@ public class Profile {
     }
 
     private String setUUID(String latitude, String longitude) {
-        return latitude + latitude;
+        int a = latitude.indexOf('.');
+        int b = longitude.indexOf('.');
+        String lat = latitude.substring(0,a) + "-" + latitude.substring(a+1);
+        String lng = longitude.substring(0, b) + "-" + longitude.substring(b+1);
+
+        return lat + "$" + lng;
     }
 
     public double calcRating(double oldRating, double newRate){
@@ -85,4 +90,18 @@ public class Profile {
         return users;
     }
 
+    public String getLatFromUUID(String uuid){
+        int a = uuid.indexOf('$');
+        String latitude = uuid.substring(0, a);
+        int b = latitude.indexOf('-');
+        return latitude.substring(0, b) + '.' + latitude.substring(b+1);
+    }
+
+    public String getLongFromUUID(String uuid){
+        int a = uuid.indexOf('$');
+        String longitude = uuid.substring(a);
+        int b = longitude.indexOf('-');
+        return longitude.substring(0, b) + '.' + longitude.substring(b+1);
+    }
+    
 }
