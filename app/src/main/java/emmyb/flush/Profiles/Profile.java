@@ -103,5 +103,5 @@ public class Profile {
         int b = longitude.indexOf('-');
         return longitude.substring(0, b) + '.' + longitude.substring(b+1);
     }
-    
+
 }
