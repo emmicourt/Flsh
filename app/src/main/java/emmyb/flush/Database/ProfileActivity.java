@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.List;
 import java.util.Map;
 
 import emmyb.flush.Profiles.Profile;
@@ -72,8 +73,17 @@ public class ProfileActivity extends FragmentActivity {
 
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
 
-    // make new profile
+        if (mProfileListener != null) {
+            mProfileReference.removeEventListener(mProfileListener);
+        }
+    }
+
+
+    // make new profile and adds it to firebase
     public void newProfile (String latitiude, String longitude) {
         newProfile = new Profile(latitiude, longitude);
 
@@ -82,52 +92,46 @@ public class ProfileActivity extends FragmentActivity {
         myRef.setValue(profileValues);
     }
 
+    // queries the database for a profile based on uuid
+    // then creates and returns a profile object
+    public Profile getProfileFromDatabase(final String uuid){
+        final Profile aProfile = new Profile(uuid);
+        final DatabaseReference ref = mDatabase.child("Profiles").child(uuid);
+        ref.addValueEventListener(new ValueEventListener() {
 
-    public void setEditingEnabled(boolean editingEnabled) {
-        //this.editingEnabled = editingEnabled;
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot messageSnapshot: dataSnapshot.getChildren()) {
+                    aProfile.setRating((double)messageSnapshot.child("rating").getValue());
+                    aProfile.setUsers((List<String>) messageSnapshot.child("users").getValue());
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+        });
+
+        return aProfile;
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-
-
-        if (mProfileListener != null) {
-            mProfileReference.removeEventListener(mProfileListener);
-        }
-    }
-
-    /**
+    // gets an existing profile from the database and takes a new rating from the user
+    // if the user has not already rated this particular profile then it takes an
+    // average of the existing and updates the value in firebsae
     public void postNewRating(String uuid, int rate){
-        setEditingEnabled(false);
-        Profile aProfile;
-
-        aProfile = new Profile(uuid);
-
+        Profile aProfile = getProfileFromDatabase(uuid);
         final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        DatabaseReference myRef = mDatabase.child("Profiles").child(uuid).child("rating")
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        // get profile information
-                        Profile profile = dataSnapshot.getValue(Profile.class);
-
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
 
         int newValue = (int) aProfile.calcRating(aProfile.getRating(), rate);
         aProfile.setRating(newValue);
         aProfile.addUser(userId);
         mDatabase.child("Profiles").child(aProfile.getUUID()).child("users").setValue(aProfile.getUsers());
 
-        myRef.setValue(newValue);
-
+        DatabaseReference ref = mDatabase.child("Profiles").child(uuid).child("rates");
+        ref.setValue(newValue);
     }
-     */
 
 }

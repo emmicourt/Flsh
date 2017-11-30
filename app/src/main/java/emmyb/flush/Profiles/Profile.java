@@ -81,6 +81,8 @@ public class Profile {
         this.longitude = longitude;
     }
 
+    public void setUsers(List<String> users) {this.users = users; }
+
     public void addUser(String userId){
         if(!users.contains(userId)){
             users.add(userId);
