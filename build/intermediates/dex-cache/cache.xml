@@ -102,21 +102,21 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\oli\.android\build-cache\8269e63836e447a526365a6668ea57bc885c9e66\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b5b6af36bacf1d812cd3dc45f9dcab9ea471ed91">
+        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_2139382ec1752e7014292817eec9a3abfef4c2e9.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\oli\.android\build-cache\11050db43b3470aea92439c4246c4b698d6dbd44\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
         <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_6933b6eec1a51a9588b87fb7f89ee783bdd7591a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\6df525d59dccde34233033cfb88cab72c878c913\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_45e3651a131da5449da805d6d1d0b3437a62e5d4.jar" />
     </item>
     <item
         is-multidex="false"
@@ -192,15 +192,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\d2339e3f442c205f3b75077dbcaebb662ac48f02\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_b80bfca8bf2f888a313136c1cb29a6dc7ee48b54.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\oli\.android\build-cache\3fc0a90cc48d0dd2fd6411578137a5b363deb96b\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -237,6 +228,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\oli\.android\build-cache\5e3c39baff032c4ff6b99721ef0cc6f4ee36b44c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="dd282bdeaa904c59d77e57dedd7e0a241c9b679d">
+        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_19ae3aa786290d30168fb29d2860dfb8ab821205.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\oli\.android\build-cache\d17c9db9b78c85d34b0cd3e472ed1683a23a051e\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -252,6 +252,15 @@
         revision="26.0.2"
         sha1="70ffe00aaf049893f59d1dad57bd82992faa38ef">
         <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_51f2f92fb43b8a123c165ad300edb9b4db4b7301.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\oli\.android\build-cache\fa454a92182565c649bce870a77cb938a0fa257f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d8942ee348aaa9341f08f7e2437063893fe27542">
+        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_6560c81820de552fb54568e910ebc1cd6aca60ec.jar" />
     </item>
 
 </items>

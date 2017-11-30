@@ -6,34 +6,45 @@
     android:layout_height="match_parent"
     tools:context="emmyb.flush.IntialScreen">
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:entries="@array/Options"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="26dp" />
-
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="login"
+        android:layout_marginBottom="27dp"
+        android:layout_marginEnd="168dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="34dp"
         android:onClick="sendMessage"
+        android:text="Sign in"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="2dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="sign in"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        tools:layout_editor_absoluteY="2dp" />
+        android:layout_marginEnd="168dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="101dp"
+        android:text="Sign up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="168dp"
+        android:layout_marginStart="128dp"
+        android:text="Google login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.557" />
 
 
 </android.support.constraint.ConstraintLayout>

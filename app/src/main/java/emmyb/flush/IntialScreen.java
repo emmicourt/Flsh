@@ -16,39 +16,9 @@ public class IntialScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intial_screen);
 
-        Spinner Spinner = (Spinner) findViewById(R.id.spinner);
-
-        Spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void onItemSelected(AdapterView<?> arg0, View view,
-                                       int position, long row_id) {
-                final Intent intent;
-                switch(position){
-                    case 1:
-                        intent = new Intent(IntialScreen.this, MapsActivity.class);
-                        break;
-                    case 2:
-                        intent = new Intent(IntialScreen.this, ProfileScreen.class);
-                        break;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-                // TODO Auto-generated method stub
-
-            }
-
-        });
     }
     public void sendMessage(View view){
-        Intent login = new Intent(this, LoginActivity.class);
+        Intent login = new Intent(this, LoginActivityF.class);
         startActivity(login);
     }
 }
