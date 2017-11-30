@@ -132,6 +132,7 @@
     <orderEntry type="library" exported="" name="com.google.android.gms:play-services-maps-11.0.4" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-v4-26.1.0" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:animated-vector-drawable-26.1.0" level="project" />
+<<<<<<< Updated upstream
     <orderEntry type="library" exported="" scope="TEST" name="com.android.support.test.espresso:espresso-idling-resource-2.2.2" level="project" />
     <orderEntry type="library" exported="" name="com.google.firebase:firebase-common-11.0.4" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javax.annotation:javax.annotation-api:1.2@jar" level="project" />
@@ -140,6 +141,12 @@
     <orderEntry type="library" exported="" name="com.google.firebase:firebase-analytics-impl-11.0.4" level="project" />
     <orderEntry type="library" exported="" name="com.google.firebase:firebase-auth-11.0.4" level="project" />
     <orderEntry type="library" exported="" name="com.google.android.gms:play-services-base-11.0.4" level="project" />
+=======
+    <orderEntry type="library" exported="" name="com.google.android.gms:play-services-fido-11.2.0" level="project" />
+    <orderEntry type="library" exported="" name="com.google.android.gms:play-services-tagmanager-api-11.2.0" level="project" />
+    <orderEntry type="library" exported="" name="com.google.android.gms:play-services-fitness-11.2.0" level="project" />
+    <orderEntry type="library" exported="" name="com.google.android.gms:play-services-location-11.2.0" level="project" />
+>>>>>>> Stashed changes
     <orderEntry type="library" exported="" name="android-android-26" level="project" />
   </component>
 </module>
