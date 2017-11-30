@@ -16,6 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.List;
 import java.util.Map;
 
+import emmyb.flush.MapsActivity;
 import emmyb.flush.Profiles.Profile;
 import emmyb.flush.R;
 
@@ -23,7 +24,7 @@ import emmyb.flush.R;
  * Created by EmmyB on 11/14/17.
  */
 
-public class ProfileActivity extends FragmentActivity {
+public class ProfileActivity extends MapsActivity {
 
     private static final String TAG = "ProfileActivity";
     private static final String REQUIRED = "Required";
