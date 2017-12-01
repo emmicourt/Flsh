@@ -11,8 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="27dp"
-        android:layout_marginEnd="168dp"
-        android:layout_marginStart="128dp"
+        android:layout_marginRight="168dp"
+        android:layout_marginLeft="128dp"
         android:layout_marginTop="34dp"
         android:onClick="sendMessage"
         android:text="Sign in"
@@ -21,30 +21,75 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
+       <!-- android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="280dp"
+        android:layout_marginTop="24dp"
+        android:text="google sign in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sign_out_button" /> -->
+
+
+
+   <!-- <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="31dp"
+        android:layout_marginLeft="16dp"
+        android:entries="@array/Options"
+        app:layout_constraintBottom_toTopOf="@+id/email_sign_in_button"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+>>>>>>> master -->
+
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="168dp"
-        android:layout_marginStart="128dp"
+        android:layout_marginRight="168dp"
+        android:layout_marginLeft="128dp"
         android:layout_marginTop="101dp"
         android:text="Sign up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+<!--=======
+        android:layout_marginBottom="553dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="2dp"
+        android:text="login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+>>>>>>> master -->
 
     <Button
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="168dp"
-        android:layout_marginStart="128dp"
+
+        android:layout_marginRight="168dp"
+        android:layout_marginLeft="128dp"
         android:text="Google login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.557" />
+<!--=======
+        android:text="sign in"
+        app:layout_constraintBottom_toTopOf="@+id/email_create_account_button"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintStart_toEndOf="@+id/spinner"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+>>>>>>> master -->
 
 
 </android.support.constraint.ConstraintLayout>

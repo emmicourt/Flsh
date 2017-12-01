@@ -2,105 +2,151 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\628dc8955418679702f2efba9b85ec878e5bd716\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/67eaf38f77966967579af554393924e85128e47d/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="f428e2fbc9ed0b297e3a3f420e51e6982f66822d">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_3d5f350b039caa5ba65a99b659061e9c6749f05f.jar" />
+        sha1="7cf5def5a11365487219b912b2a7ba8ad26f9917">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6b6be8f47ebe96ecdcb04f5ef118d8eab5691a06/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\oli\.gradle\caches\modules-2\files-2.1\android.arch.core\common\1.0.0\a2d487452376193fc8c103dd2b9bd5f2b1b44563\common-1.0.0.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/aefa38986dc910155702884e0e6d4436b8283514/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\common-1.0.0_0a41aa69217180adc2c052bac07e49a215e535a2.jar" />
+        sha1="c478771eacdf8217e093a1b967b8152cfdaadc94">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3724b417a3481ac10082fc55c36c425007c28909/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\a952a06a5df05ad211d13ed44ce2bc6aeff903ca\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/ca31a63ccee4a90868c19b980ed84d30b9a54799/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d1e7ad8d5340b695e52cc5a14819f4264a4f4b8e">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_651a6ee7fade82ca719f6345194560bface2d605/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/5fde1d16748b53d01addd07ed4ed7e423f8116e5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="01a590e11a94cb7f5c8b1243d4a2783eab4d0a34">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_48393e19192ce911e851b1d8fa384fdd488f63ee/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_e4093325e54f3f6645cd1de3ce8c68ecc2ff9246/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/b7b119f55d68c1a93540757b5a05ce3dbc0b44c1/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="af13a350b71b437ebf4be335d02a8f785c39b111">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e9351fa663557ac16838d1c97e56d1fb7da37207/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/2055a7be353941075d073cbcc4bff5abec2e5baa/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="132a3661719fdac703f2a6f6a7b178c85cfe3cc6">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4fddb6aab03bc53d79e5464e5e91de9ae8405bcb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/b37fbdc2f479bd0366b0ed6399f85965bca43766/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.2"
         sha1="233f60a165ae622c8b36731502ebbda0f65e1930">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_6c56aa52dbc77d1ef77342f27236170083127551.jar" />
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5f641876a2f300d81b7988a3c8bcb5b91357b893/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\2b5be08af64e25b4fef75607543659ebeba70df5\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/d779fa411ce48dc19174aa177c2205c69597f7cd/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="fcae52a60bc07924d370b4d376116cd8f8581f54">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_29b2a95adc6c96fa4dc26f7f885da1f00deef676.jar" />
+        sha1="6ff3baea295d5079a6b54538c8eab744ea72b4cc">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a61b6e5b76ac2f1b3bc68426b7b7df86581e15c9/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\0aee70a8fa77a59fa5964a90ba80d491a73ac323\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/01457b94ede86733a7532c1505194d3fa3a40af4/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="508f50705b4fde51a16259f29c854201a3044516">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_9622af8dc9cab60c766f2edd54485875962d2554.jar" />
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_81b0e80e7131819631fdcbbbde0cea683f48a34a/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\oli\.gradle\caches\modules-2\files-2.1\android.arch.lifecycle\common\1.0.0\e414a4cb28434e25c4f6aa71426eb20cf4874ae9\common-1.0.0.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.gradle/caches/modules-2/files-2.1/com.android.support.constraint/constraint-layout-solver/1.0.2/b9cd8fc6bd15cb915735d34535db30ece0c44603/constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="e414a4cb28434e25c4f6aa71426eb20cf4874ae9">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\common-1.0.0_8c664486dd1b12175de102cc0bee39ee12b86f42.jar" />
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_f0212f837eac919aaa951bccb8e65d548d5f81f4/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\b5288e5d948d7edb90e8767784dd4f7566314fcb\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/f890a506c7717eb0cbda2d50e68f7f75167cf106/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="b62fdc4cfef174c1e456014195c83fa7de7dc041">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_513a6414a93b250e809f5316f2b2ad9588c81d33.jar" />
+        sha1="341fc0b4661ec63331b1d95d8ceaeb04f5fd25cd">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_db51953da5a39901c5802f564caf50cb28ddcbc9/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\3bee3c7e259be1ff93a04e6b4da5713edc775bc3\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/71d386ac29f831314ca3f18ff1cd8abba3ebfb2d/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="2430e711762a749feb00b3d64858ca4768251b9d">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_a0ade813be67c8fb637458c7fc8af50dcba599f6.jar" />
+        sha1="e82b33733f801187c5b502d56fe1e3014de84b71">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5904e9b76f1dc8c89355ac3cf5fd5f54741558e0/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\87a13fa03b6ba9c05f43977d56491651a0835b6d\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.0.0/a2d487452376193fc8c103dd2b9bd5f2b1b44563/common-1.0.0.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="2442771a5590dd4eb4bce00c2e9dca9e22e4c963">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_4a1f2afc4ac04d79c29e373084364100bba02709.jar" />
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/common-1.0.0_a858c3027074d9e3d0834a318468bed10b1d1e88/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\26eb7c53ba3e366ca94766dc39e32a6f9eb1998a\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/073aa7401efb68d171139f1c02084520d00550b0/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="e5b429c146094a612134910688d169ec08deeefb">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_369851a329b3626d00d8b6a0b472d7da4f0d54b7.jar" />
+        sha1="36a6c288ed760d2d899126fa90761b84af10dd2d">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9e5329b160e9197764eb085627ce27911954c85a/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\3beee98f28f0e101da67f22a8fad344e977ad267\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/5ba4fb535416baddd645427263b7d27c4cfc25e9/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="a37fc31c5ceeaa4532a37358add1b189d8db4af1">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_b46edf0c408bfb05b17266485ce0422330936a81.jar" />
+        sha1="fc10e35f477578b1766c883d4a8561c207684531">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c2e9a8316e30e2f0bf15ed02130378993e523717/classes.dex" />
     </item>
     <item
+<<<<<<< HEAD
         is-multidex="false"
         jar="C:\Users\oli\.android\build-cache\8269e63836e447a526365a6668ea57bc885c9e66\output\jars\classes.jar"
         jumboMode="false"
@@ -117,116 +163,456 @@
         revision="26.0.2"
         sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
         <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_6933b6eec1a51a9588b87fb7f89ee783bdd7591a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\b51637947d0403480f365c2d71e790662435d9e9\output\jars\classes.jar"
-        jumboMode="false"
+=======
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/8f75485f214480d1b6da99c1e50fc5c4afe31404/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="e1625e48a836779b5fa141d22e5d05563aaccc9a">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_03477eda2fc84c9317252229350f36e104e90d00.jar" />
+        sha1="07b52724ade6a26fecb53090da1574913fc78639">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1f2201c66f30995f44ab050c455f3ce087419d28/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\ba373afa14e3596add0a5f0ae39a43fef3cec255\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="6f4138a4e065826cb044d49faea4cfd7191773d1">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_4527739568dd91895e4d695f5a401d865e88e31a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\830852d5217cff44999dbd0878ced7fee80b1fc8\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_e694f4e9cd8559a178c45356f0140fa2efdb18a5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\789ad2362a27a56d4f89a5c4fcb5c24beddce576\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="f97cf85b0fe70d37a705111dafa6b1b418ea1650">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_902097724123b7260c7ec691438a5054748ffe1f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\oli\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_28b081de0e0db99a79b7915cb573da08475f279a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\38ad50a0b07bc3e96055ae24dcfa5f1f668efc03\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="43e9789bd3240271265ab30ce1be9f224843f5a8">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_5b04a9793af240fd5ac67d78f2fb6335d15ded48.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\f7563c1b4931c3a015ba898b897a0022245bd5da\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="7efef32744ca4a436492d5cf28c08698cc2af256">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_dbcbe7a518abc1440e0a374d49760883275faf28.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\7283bff28b2d0438eb1b9aac57dda9617aa44095\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="364364bf77b4a71afc5930fc3ae57b3f0eea637c">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_4c799cc553d313970c955aa748d70e8dcec17aef.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\3fc0a90cc48d0dd2fd6411578137a5b363deb96b\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="ed87ccdcb70c17d71ba4e6e4ac16afa62d3c49fb">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_e95223441e243a72299108cebf94845e1b36c987.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\oli\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.1.0\814258103cf26a15fcc26ecce35f5b7d24b73f8\support-annotations-26.1.0.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/26.1.0/814258103cf26a15fcc26ecce35f5b7d24b73f8/support-annotations-26.1.0.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.2"
         sha1="0814258103cf26a15fcc26ecce35f5b7d24b73f8">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\support-annotations-26.1.0_5a3d1c416144879f29cc4376d13dfe115e76501f.jar" />
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-26.1.0_26d65d30896ef1f167f7277cfb1fa93b59655a70/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\93d5963097f2315d6c881786ff3057c8ba53d2f1\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/dd9898a8a073d2692898940c0533947a1e877c91/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="7b4dc2d9e39fb8ec5ddca9b3b3cb7c627690f3a6">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8ece77272d71871ed0cd1dde979f442a5973c145/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/a08bb4c8da3501a02f59abcd52e84cd17ce6b489/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="41872d809cff2114169756aad6dcd593be2ecb59">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_adf89742acbe9306ee7fb4223c5be24658cc1a4d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/c4efd6e20a4df231ca96861793bbdf863728ef66/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2df69841cd9793d6bfa2f78b7b7f4ea06d2296a7">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3be72decff01e539c907c4880facce8f5c4fd62a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/fb98d187dff3777211d626b1b1aacd0a723f4bdc/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="694e2bf7a21fa46310a4a0309b9943060d573abe">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2426b6320cc3bb34bd17556e88b9eece3af0f9da/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/5872c4ea20d4adf6662a4d3ce8d878cc6c59cb3e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c839ceb2113b00249e896c1c02ae15cdd8380345">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_47949a4d4f277d6b10d4195134207bf1dd176a59/classes.dex" />
+>>>>>>> master
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/22a17fbd5357911a33e551d109ec23d10e4a3e88/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.2"
         sha1="58b12bdb21a84f22e0dc3b047aeceb0a546b1b44">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_8782de4dd0a2eb9f01e6c0317417999e0c694f9f.jar" />
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_db1884a9e4388867b45c39ebe0e8a3bf211681b8/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\89f25e3e3dc39a17080e08199d098a1fab974364\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.0.0/e414a4cb28434e25c4f6aa71426eb20cf4874ae9/common-1.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e414a4cb28434e25c4f6aa71426eb20cf4874ae9">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/common-1.0.0_af3d3ae192223443b62c89349af3c38757338895/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/26a08b799740a136763f59e093580fe653b371f1/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="31aafe75ac42184d700ec3f862bf735c33ba201a">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f3292a7bda4db26fd64558ac45867b30a2f087a6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/49a7abc07927d5bcd9b15bc92e509b4383e60321/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="56ae1b700bdd20fdf8c5347fadcc96228fc1bf16">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b29bedef4f0d5b374d7f8f9378fe5b838df51f5c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/43d41975d1bbf963bb8422777d7163e31b8d7d68/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="df812c448ef60fa0032ced451751ff98392b70a1">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d58771ab6064aacaf87a048f8bed721218c97a8d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/371d3ae0c7f39356fda4a35a8b5c1d080278b155/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6f4138a4e065826cb044d49faea4cfd7191773d1">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_03f61bf65eb0618003d556552df07e2a372e6d8d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/1e167c702980db8de8940c8602dc0b020b96b060/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="28ed270c519ff2874343e0824808da2efda0df9c">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2a6b189c2cf7fd9f44f3fcc463b231d3b7e6b166/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/3714c69ca5de444e7932644234d00f1a6f9b3054/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="76a7a625df0e9027b53dbed6e9ba9a6031a42e39">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_10b3514a18f3dcf67f8fd0f82cf04d816478ce99/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e008d62816c056d0ea8fba1f05e10bf9487ad41b">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_6c415c4aeaee86c5fcd7833523aff834e363c7a2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/9f91755267b2e59b420af25abde66df439e9e7f5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="9c80e982366ff105ce567a3e536cb77ae4981ade">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_44cda2b74859d0de5ce66326d8661a3c9e120d76/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/24c48a4180f38045c2234b5c8162b60638f49142/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6987a74958e42b559fd0eacef972173f59ba93bb">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b21a1a03e948b6fd99e2eb1e2ad2caf254db1e0c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/cc93f32f20e75f3c521b814371f67b076563a1a9/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="171b54791d6ecec42ffc943bf9ea1a363ff6ab4f">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d09f005f9fc6db53b9db108d4531a83f143c36be/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/db106208f5bd91de0ac6b2e28d8600f574f4ee60/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b12cd9c87c3dfb012a911b6e38d2444ed0a65e1f">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0e9b5b5809bab52c2b8ef8b858834216d22eb5c1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/15be694a5c6ec0558f8e94a80f0dddc44b61406a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="67a51ae54d61ca318e61c73cdd9b27ec56af03bc">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d5793ee36cbb59d0bcab6c031f980b56a4b42686/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/cd619caf7052ade90e4ee9057efd0a72c6f99a7c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f779085940b4f3c80ea711dc24a36649f16f4cd5">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_cb4d07f9e139b03791bd6ddee8b83724caa1578b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/c77cefa99f2028ede96bd3f6744ada3eff456ac3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="bd362e8a7451fb70f9d28498949c1be35e5a2e6e">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4539e25daf5000ea9ba6748a649991959d7412b7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/ce52a8e7fe2831503588e84f03bab27c25e4143a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="767b85989de73cb665e14510ff2657ef979241f9">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_55eecab3219e20766d77dd65dfd446a59daf4db9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/abf8c1437384159c7b34b7f6e529ec42c27016b1/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.2"
         sha1="40392f30a601db5675cdf18192aab013d6fee6ec">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_9a6de7fe6c2695880f5871440a14059cae889476.jar" />
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_cb6b87fde47892596a74dea7e574d7995793de9c/classes.dex" />
     </item>
     <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/4251dce852c84e57a82ae41bc7fccbf170bed1ee/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="010af21d7b95f7c975dd3d2fb2aa936a241b385b">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_899d298c33653ddd1511048fa121c13cd6fa579c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/1d3149eaaecb8800447b4c6471c3e3901adc53ed/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="cad6f251cba07624f49b0c5b6287731a3c9957b8">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_65a4e0041a4158ea1d6346acf36c88616aea1d3a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/ffa01fc69748c929e6e9dffaf6800a560ddcf430/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="03589bac12234193d4a7a9b106a6db1b367afe99">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_49d2eb274e40e83afdebf264c986bf3195c58fa6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/c1210ba562fba247078c5f89c3478c0b206efc74/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f428e2fbc9ed0b297e3a3f420e51e6982f66822d">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7155adb0fe9cc06cd5e0e2609d6174a93dcec2b5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/72fb6a48f1c965e34259d7df8be0419c87c9c4c1/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="0c6b6b87687475583a7841926cfcadef96280483">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_30a0236718afa6d90629e1998746021b6b09e13a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/62196f7822689f29cd6c9a4f2b93e3d33660c137/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2a8ae88a3addcb045172d340c4d1e977cbd50c39">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4b43444fa5bd89cb8eb70b65c411bf6104851706/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/60ca5dcdc88d7c9827bfae812b49cd9741ea0746/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3227957f15e5f672f35758c028cf3b94fb39b56d">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8d5cf7973696fec811ae0f3f3a7c216a97dad55e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/b225e1138a6c865d2814ad0a0d6812ea74dee7de/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f5e24e901834850335a8bb7d95cf51ea1468a32a">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_184e94bcb972dc14e2a303370bbb8425d6e7a686/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/af2e41004d399b0354a2ad07a9b3db9c2bdd288a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="83f83593e58b678e8e6b8db6cf1fd8fe0e22dfe1">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3910bbb76e08e2b6db9aa3c322ee28ddaffe0abc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/bb38a890a77dc7a560710924fcb48e8da13fd3a0/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f97cf85b0fe70d37a705111dafa6b1b418ea1650">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_fe639754383c683876e88be63d8717cacd09305f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/af02f65ebe2bab6602d63edb995012a5167f9ae2/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3da345d7c08a7e9d83a34d8723057624b941c0ea">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_06ce5ec59968a57c9fa6a2f504518140b14a6c1a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/9f7566f3cc885989d9d97329e80a0f77c4e96024/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c6a5692945e9d4bc34baddb4f7cb79070038f739">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f7d05d9f3a05fec2db1089d8694da3a9b2b031e5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/d752a41825bf47e87aecd72ae6cb59c4c248ed20/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a3a0d55874ee03de768356d540983a20c95dd07a">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_476b0bba4df869244df005f8a247e13bd402284f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/60f006a202b45a9654e02bf84e15475f29870f38/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d1a80b23cc4097106a3f4914928e700ac3c5b2ed">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c8759d6164da4aa0e83db52d80365fe4d4c52ee1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/bc72e4e76bc970200b625c8b5744decc7a0a9404/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="816a71eb5b0340d26db3056aa33f58dad108315b">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0a9aee6caaed4d2b6dc6d45b20604ac757229762/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/b9f6da6db7278581ef35dfe0ed55d312a3a126f5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="edba0aec4aedd4edb3a520b4ee87adc52be762da">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7943b9089ac68fe7231c3d7c20a4777148b555f6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/0ec15572387e12261168fc7c9733817a81fbf61d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="9be5e957849eb82ad9addf9bdb2896de8bf5654b">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e51d0138fd845e80ae4e69eebd1d24278514e00c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/a32dca4799ea0efbcda29e4c2e6e0c0b642d9ec5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="7efef32744ca4a436492d5cf28c08698cc2af256">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e9c551fde0f561d0ae525a44804abba16d1cb360/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/d1049d614baf0d64bb2ea93ab6ee444f3783cd20/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="57717bc4b81722a9c3e481fc6f150a950afd550c">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a7aee2a5a8b1477305ae236653b677b86048c774/classes.dex" />
+    </item>
+    <item
+<<<<<<< HEAD
+        is-multidex="false"
+        jar="C:\Users\oli\.android\build-cache\3fc0a90cc48d0dd2fd6411578137a5b363deb96b\output\jars\classes.jar"
+        jumboMode="false"
+=======
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/fda419c9b3391f83a31f2d93ad10ed51b9f003eb/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a93a72fe5e0ac12f4a8ff35c5a6ed651e142d10a">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9b0af06e8e4f2a4df08f3afcbac4e18fe587c090/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/b6734bab75ac1937f73c160cfe0f47abf453f232/output/jars/classes.jar"
+        jumboMode="true"
+>>>>>>> master
+        optimize="true"
+        revision="26.0.2"
+        sha1="00e57da8e7efba5e0aead2d3c76201d86918a0d1">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4a4a9deb0e36cf03065dbc25ecf62c35f322f3ce/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/f01a2c7434610d48d438d09635bd40975f954e8a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a37fc31c5ceeaa4532a37358add1b189d8db4af1">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_85cf658f590ffe27a570781e81cd23fc8e7ce9bc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/cda69531f6121683690500cd16093f2cacfb5e90/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="539c74d461960397d4c3f72623c72eb766569075">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8aaae2b8358a9085589d2ee24c55af72530c0fe0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/7e7917f10cd6ea16dc9f039ea53ac76fd8ed1c20/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="508f50705b4fde51a16259f29c854201a3044516">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_91c8fd704bb4470308aa1e05d9da1814f438c94d/classes.dex" />
+    </item>
+    <item
+<<<<<<< HEAD
         is-multidex="false"
         jar="C:\Users\oli\.android\build-cache\5e3c39baff032c4ff6b99721ef0cc6f4ee36b44c\output\jars\classes.jar"
         jumboMode="false"
@@ -239,19 +625,78 @@
         is-multidex="false"
         jar="C:\Users\oli\.android\build-cache\d17c9db9b78c85d34b0cd3e472ed1683a23a051e\output\jars\classes.jar"
         jumboMode="false"
+=======
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/2bafb36f78c649f93f1b7022206d037f16458e2b/output/jars/classes.jar"
+        jumboMode="true"
+>>>>>>> master
         optimize="true"
         revision="26.0.2"
-        sha1="b12cd9c87c3dfb012a911b6e38d2444ed0a65e1f">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_4aca019e823f6ee500d7c25c429637c7c1b0c33a.jar" />
+        sha1="0a3ae2ca8e64cdda4ae59aef07e33226cb950f5c">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_61d6c68a404039d647928efea3197ccacb43e94b/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\oli\.android\build-cache\f76b6f61b816f757a83f012543868932e64ce7e7\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/e1c44b1d980dfb075fc5bd356e8b5e2ba8e44b1d/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="70ffe00aaf049893f59d1dad57bd82992faa38ef">
-        <dex dex="C:\Users\oli\Desktop\Flsh\Flsh\app\build\intermediates\pre-dexed\debug\classes_51f2f92fb43b8a123c165ad300edb9b4db4b7301.jar" />
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_95925dec7f3134191db8c7df936c5919e208184e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/50b2e9af959ea8a111cbc86dd3b6a60b1441aba6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="103378d4e51581df4783e9e4a59a1775fe4f4104">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_399589398ae70e25970fcefefd0bf0eb5d60c534/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/971582abe53d65e6af81075fddb4787e9158425e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a2a935bcf7d7c529f04dc89905d1ddf678d5e692">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b461811abe7601e32550f35336a8af80d8b005fb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/41c88f11cbddce2c1508b81a5d3ca0cee424ac1c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="9d151a92bb0af74ea6368e57ddf0e03c609155b4">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_09e2a98554c2cecd00f1ba21f588a71f7796dbe3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/82fec4399f5bee4ae1ba699c53abf9879d668854/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2442771a5590dd4eb4bce00c2e9dca9e22e4c963">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9e3cc7491fb12fefe97ae0c190bb6b91f626d87e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/384e0c827eb04a0bc6d3d779245869435552e44d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b62fdc4cfef174c1e456014195c83fa7de7dc041">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d0449fe32509a6a531156f69052fa03f294a4481/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jessicadelrio/.android/build-cache/8cadf938827c4ebc487cd24b4e166c045cb7bfdb/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="814b7c015442bfbedc29035e7afdfe383d893a03">
+        <dex dex="/Users/jessicadelrio/Desktop/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_46a0d7aa43441859e237242ebb860fee8c162dd2/classes.dex" />
     </item>
     <item
         is-multidex="false"

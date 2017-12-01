@@ -49,7 +49,7 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
 
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        verifyEmail = (Button) findViewById(R.id.verifyEmail);
+       // verifyEmail = (Button) findViewById(R.id.verifyEmail);
 
         //textViewSignIn = (TextView) findViewById(R.id.textViewSignIn);
 
