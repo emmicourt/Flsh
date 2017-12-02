@@ -85,6 +85,8 @@ public class MapsActivity extends AppCompatActivity implements
         // flag for add button
         boolean addClickFlag = false;
 
+        ProfileActivity mProfileActivity;
+
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -150,12 +152,12 @@ public class MapsActivity extends AppCompatActivity implements
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {
             if (item.getItemId() == R.id.add) {
-                if(!addClickFlag) {
-                    mMap.setOnMapLongClickListener(this);
-                }
                 if(addClickFlag){
                     mMap.setOnMapLongClickListener(null);
                     addClickFlag = false;
+                }
+                if(!addClickFlag) {
+                    mMap.setOnMapLongClickListener(this);
                 }
             }
             if (item.getItemId() == R.id.logout) {
