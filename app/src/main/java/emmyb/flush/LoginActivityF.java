@@ -101,7 +101,6 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
     }
 
     //------------------ Fire base functions  --------------------------------- //
-git
     @Override
     public void onStart() {
         super.onStart();

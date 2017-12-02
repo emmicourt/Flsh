@@ -25,6 +25,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import emmyb.flush.IntialScreen;
+import emmyb.flush.MapsActivity;
 import emmyb.flush.R;
 
 /**
@@ -45,8 +47,6 @@ public class GoogleSignIn extends FragmentActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intial_screen);
 
-
-        mAuth = FirebaseAuth.getInstance();
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -81,10 +81,22 @@ public class GoogleSignIn extends FragmentActivity implements
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
+                goToMap();
             } else {
                 // Google Sign In failed, update UI appropriately
+                goToInit();
             }
         }
+    }
+
+    private void goToInit() {
+        Intent maps = new Intent(this, IntialScreen.class);
+        startActivity(maps);
+    }
+
+    private void goToMap() {
+        Intent maps = new Intent(this, MapsActivity.class);
+        startActivity(maps);
     }
 
     private void revokeAccess() {
