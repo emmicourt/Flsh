@@ -1,10 +1,15 @@
 package emmyb.flush.Auth;
 
+/**
+ * Created by EmmyB on 12/2/17.
+ */
+
+
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -22,12 +27,16 @@ import emmyb.flush.IntialScreen;
 import emmyb.flush.Maps.MapsActivity;
 import emmyb.flush.R;
 
-public class LoginActivityF extends AppCompatActivity implements View.OnClickListener{
+/**
+ * Registration of a new user
+ */
+public class LoginActivityG extends AppCompatActivity implements View.OnClickListener {
     public static final String EXTRA_MESSAGE = "emmyb.flush";
-    private static final String TAG = "LoginActivityF";
-    private Button signIn;
-    private EditText editTextEmail;
-    private EditText editTextPassword;
+    private static final String TAG = "LoginActivityG";
+    private Button verifyEmail;
+    private EditText editTextEmail1;
+    private EditText editTextPassword2;
+
 
     private ProgressDialog progressDialog;
 
@@ -44,27 +53,44 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mIntialScreen = new IntialScreen();
-
-        setContentView(R.layout.activity_login_f);
-        signIn = (Button) findViewById(R.id.signIn);
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
-        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        signIn.setOnClickListener(this);
+        setContentView(R.layout.activity_login_g);
+        verifyEmail = (Button) findViewById(R.id.verifyEmail);
+        editTextEmail1 = (EditText) findViewById(R.id.editTextEmail1);
+        editTextPassword2 = (EditText) findViewById(R.id.editTextPassword2);
+        verifyEmail.setOnClickListener(this);
 
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
 
     }
 
+    private void registerUser(){
+        String email = editTextEmail1.getText().toString().trim();
+        String password = editTextPassword2.getText().toString().trim();
+
+        if(TextUtils.isEmpty(email)){
+            Toast.makeText(this, "Please Enter email", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(TextUtils.isEmpty(password)) {
+            Toast.makeText(this, "Please Enter password", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        /* Firebase magic */
+        createAccount(email, password);
+        /* End of firebase magic */
+
+        progressDialog.setMessage("Register User");
+        progressDialog.show();
+
+    }
+
     @Override
     public void onClick(View view) {
-        if (view == signIn) {
-            String email = editTextEmail.getText().toString().trim();
-            String password = editTextPassword.getText().toString().trim();
-            /* Firebase magic */
-            signIn(email, password);
-            /* End of firebase magic */
+        if(view == verifyEmail) {
+            registerUser();
+            sendEmailVerification();
         }
     }
 
@@ -95,16 +121,15 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = firebaseAuth.getCurrentUser();
+                            goToMaps();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(LoginActivityF.this, "Authentication failed.",
+                            Toast.makeText(emmyb.flush.Auth.LoginActivityG.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
-
-        signIn(email, password);
 
     }
 
@@ -121,7 +146,7 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(LoginActivityF.this, "Authentication failed.",
+                            Toast.makeText(emmyb.flush.Auth.LoginActivityG.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
 
@@ -155,12 +180,12 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
                         findViewById(R.id.verifyEmail).setEnabled(true);
 
                         if (task.isSuccessful()) {
-                            Toast.makeText(LoginActivityF.this,
+                            Toast.makeText(emmyb.flush.Auth.LoginActivityG.this,
                                     "Verification email sent to " + user.getEmail(),
                                     Toast.LENGTH_SHORT).show();
                         } else {
                             Log.e(TAG, "sendEmailVerification", task.getException());
-                            Toast.makeText(LoginActivityF.this,
+                            Toast.makeText(emmyb.flush.Auth.LoginActivityG.this,
                                     "Failed to send verification email.",
                                     Toast.LENGTH_SHORT).show();
                         }
@@ -171,3 +196,4 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
     }
 
 }
+

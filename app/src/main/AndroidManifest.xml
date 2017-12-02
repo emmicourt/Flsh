@@ -33,6 +33,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
         <activity
             android:name=".Maps.MapsActivity"
             android:parentActivityName=".Auth.LoginActivityF">
@@ -50,7 +51,10 @@
         <activity android:name=".Database.ProfileActivity" />
         <activity
             android:name=".Auth.LoginActivityF"
-            android:label="@string/title_activity_login" />
+            android:label="Log in" />
+        <activity
+            android:name=".Auth.LoginActivityG"
+            android:label="Create User" />
     </application>
 
 </manifest>

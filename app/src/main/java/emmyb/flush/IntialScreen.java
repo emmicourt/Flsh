@@ -26,6 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 import emmyb.flush.Auth.LoginActivityF;
+import emmyb.flush.Auth.LoginActivityG;
 import emmyb.flush.Maps.MapsActivity;
 
 public class IntialScreen extends AppCompatActivity implements View.OnClickListener,
@@ -71,24 +72,19 @@ public class IntialScreen extends AppCompatActivity implements View.OnClickListe
                 .build();
     }
 
-    public void sendMessage(View view){
-
-        if(view == googleButt){
+    @Override
+    public void onClick(View v) {
+        if(v == googleButt){
             signIn();
-        } else if ( view == loginButt ){
+        } else if ( v == loginButt ){
             isLogin = true;
             Intent login = new Intent(this, LoginActivityF.class);
             startActivity(login);
-        } else if (view == signUpButt){
+        } else if (v == signUpButt){
             isLogin = false;
-            Intent login = new Intent(this, LoginActivityF.class);
+            Intent login = new Intent(this, LoginActivityG.class);
             startActivity(login);
         }
-    }
-
-    @Override
-    public void onClick(View v) {
-        sendMessage(v);
     }
 
 
