@@ -17,7 +17,7 @@
         android:title="@string/add_restroom"
         app:showAsAction="collapseActionView" />
     <item
-        android:id="@+id/signOut"
+        android:id="@+id/logout"
         android:title="@string/logout"
         app:showAsAction="collapseActionView" />
 </menu>

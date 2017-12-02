@@ -33,6 +33,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
+import emmyb.flush.Database.ProfileActivity;
+
 
 public class MapsActivity extends AppCompatActivity implements
         OnMapReadyCallback,
@@ -64,6 +66,11 @@ public class MapsActivity extends AppCompatActivity implements
         // Keys for storing activity state.
         private static final String KEY_CAMERA_POSITION = "camera_position";
         private static final String KEY_LOCATION = "location";
+
+        private ProfileActivity mProfileActivity;
+
+
+
 
 
         @Override
@@ -277,8 +284,14 @@ public class MapsActivity extends AppCompatActivity implements
          * When user long clicks then it add marker to map
          * @param position
          */
-         public void onMapLongClick(LatLng position){
+        public void onMapLongClick(LatLng position){
             mMap.addMarker(new MarkerOptions().position(position));
+            //mProfileActivity = new ProfileActivity();
+            double latitudeDec = position.latitude;
+            double longitudeDec = position.longitude;
+            String Latt = String.valueOf(latitudeDec);
+            String Longg = String.valueOf(longitudeDec);
+            //mProfileActivity.newProfile(Latt, Longg);
         }
     }
 
