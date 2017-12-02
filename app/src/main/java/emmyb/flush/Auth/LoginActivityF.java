@@ -1,4 +1,4 @@
-package emmyb.flush;
+package emmyb.flush.Auth;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -18,6 +18,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import emmyb.flush.IntialScreen;
+import emmyb.flush.Maps.MapsActivity;
+import emmyb.flush.R;
+
 public class LoginActivityF extends AppCompatActivity implements View.OnClickListener{
     public static final String EXTRA_MESSAGE = "emmyb.flush";
     private static final String TAG = "LoginActivity";
@@ -35,6 +39,10 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
 
 
     @Override
+    /**
+     * OnCreate()
+     * Takes a boolean from Initial screen to determiine if the user is trying
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -159,10 +167,6 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
     private void goToMaps() {
         Intent maps = new Intent(this, MapsActivity.class);
         startActivity(maps);
-    }
-
-    private void signOut() {
-        firebaseAuth.signOut();
     }
 
     private boolean validateForm(){

@@ -1,12 +1,10 @@
 package emmyb.flush.Database;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -16,9 +14,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.List;
 import java.util.Map;
 
-import emmyb.flush.MapsActivity;
+import emmyb.flush.Maps.MapsActivity;
 import emmyb.flush.Profiles.Profile;
-import emmyb.flush.R;
 
 /**
  * Created by EmmyB on 11/14/17.
