@@ -3,6 +3,7 @@ package emmyb.flush.Database;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
+import android.support.v4.app.FragmentActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;

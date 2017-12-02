@@ -34,11 +34,11 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
         <activity
-            android:name=".MapsActivity"
-            android:parentActivityName=".LoginActivityF">
+            android:name=".Maps.MapsActivity"
+            android:parentActivityName=".Auth.LoginActivityF">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LoginActivityF" />
+                android:value=".Auth.LoginActivityF" />
         </activity>
         <activity android:name=".IntialScreen">
             <intent-filter>
@@ -47,9 +47,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProfileScreen" />
+        <activity android:name=".Database.ProfileActivity" />
         <activity
-            android:name=".LoginActivityF"
+            android:name=".Auth.LoginActivityF"
             android:label="@string/title_activity_login" />
     </application>
 

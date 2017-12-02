@@ -32,11 +32,11 @@ public class IntialScreen extends AppCompatActivity implements View.OnClickListe
         GoogleApiClient.OnConnectionFailedListener{
     public static final String EXTRA_MESSAGE = "emmyb.flush";
 
-    public static Boolean isSignIn;
+    public Boolean isLogin = true;
 
     private Button googleButt;
-    private Button signInButt;
-    private Button registerButt;
+    private Button loginButt;
+    private Button signUpButt;
 
     private static final String TAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 9001;
@@ -49,11 +49,11 @@ public class IntialScreen extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_intial_screen);
 
         googleButt = (Button) findViewById(R.id.button5);
-        signInButt = (Button) findViewById(R.id.button2);
-        registerButt = (Button) findViewById(R.id.button3);
+        loginButt = (Button) findViewById(R.id.button2);
+        signUpButt = (Button) findViewById(R.id.button3);
         googleButt.setOnClickListener(this);
-        signInButt.setOnClickListener(this);
-        registerButt.setOnClickListener(this);
+        loginButt.setOnClickListener(this);
+        signUpButt.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -75,12 +75,12 @@ public class IntialScreen extends AppCompatActivity implements View.OnClickListe
 
         if(view == googleButt){
             signIn();
-        } else if ( view == signInButt ){
-            isSignIn = true;
+        } else if ( view == loginButt ){
+            isLogin = true;
             Intent login = new Intent(this, LoginActivityF.class);
             startActivity(login);
-        } else {
-            isSignIn = false;
+        } else if (view == signUpButt){
+            isLogin = false;
             Intent login = new Intent(this, LoginActivityF.class);
             startActivity(login);
         }

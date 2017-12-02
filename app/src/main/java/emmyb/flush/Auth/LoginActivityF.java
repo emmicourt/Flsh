@@ -37,6 +37,8 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
 
     private FirebaseAuth firebaseAuth;
 
+    IntialScreen mIntialScreen;
+
 
     @Override
     /**
@@ -45,8 +47,9 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
      */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mIntialScreen = new IntialScreen();
 
-        if(IntialScreen.isSignIn){
+        if(mIntialScreen.isLogin){
             setContentView(R.layout.activity_login_f);
             signIn = (Button) findViewById(R.id.signIn);
             editTextEmail = (EditText) findViewById(R.id.editTextEmail);
