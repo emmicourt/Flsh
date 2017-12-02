@@ -42,8 +42,8 @@ import emmyb.flush.Database.ProfileActivity;
 
 public class MapsActivity extends AppCompatActivity implements
         OnMapReadyCallback,
-        OnMapLongClickListener,
-        View.OnClickListener{
+        OnMapLongClickListener{
+        //View.OnClickListener{
 
 
         private static final String TAG = MapsActivity.class.getSimpleName();
@@ -73,7 +73,10 @@ public class MapsActivity extends AppCompatActivity implements
         // Keys for storing activity state.
         private static final String KEY_CAMERA_POSITION = "camera_position";
         private static final String KEY_LOCATION = "location";
-    
+
+        // flag for add button
+        boolean addClickFlag = false;
+
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -89,8 +92,8 @@ public class MapsActivity extends AppCompatActivity implements
             // Retrieve the content view that renders the map.
             setContentView(R.layout.activity_maps);
 
-            signOut = (Button) findViewById(R.id.verifyEmail);
-            signOut.setOnClickListener(this);
+            //signOut = (Button) findViewById(R.id.logout);
+            //signOut.setOnClickListener(this);
 
             // Construct a GeoDataClient.
             mGeoDataClient = Places.getGeoDataClient(this, null);
@@ -132,13 +135,25 @@ public class MapsActivity extends AppCompatActivity implements
 
         /**
          * Handles a click on the Restroom add button, enables the Map Long Click Listener.
+         * Handles a click on the logout button, signs the user out
          * @param item The menu item to handle.
          * @return Boolean.
          */
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {
             if (item.getItemId() == R.id.add) {
-                mMap.setOnMapLongClickListener(this);
+                if(!addClickFlag) {
+                    mMap.setOnMapLongClickListener(this);
+                }
+                if(addClickFlag){
+                    mMap.setOnMapLongClickListener(null);
+                    addClickFlag = false;
+                }
+            }
+            if (item.getItemId() == R.id.logout) {
+                Intent maps = new Intent(this, IntialScreen.class);
+                signOut();
+                startActivity(maps);
             }
             return true;
         }
@@ -290,20 +305,26 @@ public class MapsActivity extends AppCompatActivity implements
          * @param position
          */
         public void onMapLongClick(LatLng position){
-            mMap.addMarker(new MarkerOptions().position(position));
-            //mProfileActivity = new ProfileActivity();
-            double latitudeDec = position.latitude;
-            double longitudeDec = position.longitude;
-            String Latt = String.valueOf(latitudeDec);
-            String Longg = String.valueOf(longitudeDec);
-            //mProfileActivity.newProfile(Latt, Longg);
+            if(!addClickFlag) {
+                mMap.addMarker(new MarkerOptions().position(position));
+                //mProfileActivity = new ProfileActivity();
+                double latitudeDec = position.latitude;
+                double longitudeDec = position.longitude;
+                String Latt = String.valueOf(latitudeDec);
+                String Longg = String.valueOf(longitudeDec);
+                //mProfileActivity.newProfile(Latt, Longg);
+                addClickFlag = true;
+            }
         }
 
-    private void signOut(){
-        FirebaseAuth.getInstance().signOut();
-    }
+        /**
+         * Signs the user out of the database
+         */
+        private void signOut(){
+            FirebaseAuth.getInstance().signOut();
+        }
 
-    @Override
+    /*@Override
     public void onClick(View v) {
         Intent maps = new Intent(this, IntialScreen.class);
 
@@ -311,6 +332,6 @@ public class MapsActivity extends AppCompatActivity implements
             signOut();
             startActivity(maps);
         }
-    }
+    }*/
 }
 
