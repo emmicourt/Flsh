@@ -21,7 +21,7 @@ import emmyb.flush.R;
  * Created by EmmyB on 10/31/17.
  */
 
-public class EmailSignIn extends FragmentActivity implements View.OnClickListener{
+public class EmailSignIn extends FragmentActivity {
 
     private static final String TAG = "EmailPassword";
     private FirebaseAuth mAuth;
@@ -36,18 +36,6 @@ public class EmailSignIn extends FragmentActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intial_screen);
 
-        // Views
-        //mStatusTextView = findViewById(R.id.status);
-        //mDetailTextView = findViewById(R.id.detail);
-       // mEmailField = findViewById(R.id.field_email);
-       // mPasswordField = findViewById(R.id.field_password);
-
-        // Buttons
-        //findViewById(R.id.email_sign_in_button).setOnClickListener(this);
-       // findViewById(R.id.email_create_account_button).setOnClickListener(this);
-       // findViewById(R.id.sign_out_button).setOnClickListener(this);
-        //findViewById(R.id.verify_email_button).setOnClickListener(this);
-
         mAuth = FirebaseAuth.getInstance();
     }
 
@@ -56,10 +44,9 @@ public class EmailSignIn extends FragmentActivity implements View.OnClickListene
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
     }
 
-    private void createAccount(String email, String password ){
+    public void createAccount(String email, String password){
         Log.d(TAG, "createAccount:" + email);
         if (!validateForm()) {
           return;
@@ -73,23 +60,18 @@ public class EmailSignIn extends FragmentActivity implements View.OnClickListene
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(EmailSignIn.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            updateUI(null);
                         }
-
-                        // ...
                     }
                 });
 
     }
 
     private void signIn(String email, String password){
-
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -98,16 +80,13 @@ public class EmailSignIn extends FragmentActivity implements View.OnClickListene
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
                             Toast.makeText(EmailSignIn.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            updateUI(null);
                         }
 
-                        // ...
                     }
                 });
 
@@ -115,11 +94,6 @@ public class EmailSignIn extends FragmentActivity implements View.OnClickListene
 
     private void signOut() {
         mAuth.signOut();
-        updateUI(null);
-    }
-
-    private void updateUI(FirebaseUser user){
-
     }
 
     private boolean validateForm(){
@@ -155,23 +129,6 @@ public class EmailSignIn extends FragmentActivity implements View.OnClickListene
                     }
                 });
         // [END send_email_verification]
-    }
-
-
-    @Override
-    public void onClick(View v) {
-        int i = v.getId();
-        /*
-        if (i == R.id.email_create_account_button) {
-            createAccount(mEmailField.getText().toString(), mPasswordField.getText().toString());
-        } else if (i == R.id.email_sign_in_button) {
-            signIn(mEmailField.getText().toString(), mPasswordField.getText().toString());
-        } else if (i == R.id.sign_out_button) {
-            signOut();
-        } else if (i == R.id.verify_email_button) {
-            sendEmailVerification();
-        }
-        */
     }
 
 }
