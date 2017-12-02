@@ -38,7 +38,7 @@ public class ProfileActivity extends MapsActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState  ){
         super.onCreate(savedInstanceState);
-        //setContentView();
+        //if()setContentView();
 
         //initialize database
         mDatabase =  FirebaseDatabase.getInstance().getReference();
