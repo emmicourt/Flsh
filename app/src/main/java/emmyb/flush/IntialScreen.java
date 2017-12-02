@@ -25,7 +25,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-import emmyb.flush.Auth.GoogleSignIn;
+import emmyb.flush.Auth.LoginActivityF;
+import emmyb.flush.Maps.MapsActivity;
 
 public class IntialScreen extends AppCompatActivity implements View.OnClickListener,
         GoogleApiClient.OnConnectionFailedListener{
