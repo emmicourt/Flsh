@@ -55,8 +55,7 @@ public class MapsActivity extends AppCompatActivity implements
         private FirebaseAuth firebaseAuth;
 
         private ChildEventListener mChildEventListener;
-        private DatabaseReference mProfileRef = FirebaseDatabase.getInstance()
-                .getReference("Profiles");
+g                .getReference("Profiles");
 
         ProfileActivity mProfileActivity = new ProfileActivity();
 
@@ -84,8 +83,6 @@ public class MapsActivity extends AppCompatActivity implements
 
         // flag for add button
         boolean addClickFlag = false;
-
-        ProfileActivity mProfileActivity;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
