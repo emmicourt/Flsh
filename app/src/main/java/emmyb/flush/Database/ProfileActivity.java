@@ -21,7 +21,7 @@ import emmyb.flush.Profiles.Profile;
  * Created by EmmyB on 11/14/17.
  */
 
-public class ProfileActivity extends MapsActivity {
+public class ProfileActivity extends FragmentActivity {
 
     private static final String TAG = "ProfileActivity";
     private static final String REQUIRED = "Required";

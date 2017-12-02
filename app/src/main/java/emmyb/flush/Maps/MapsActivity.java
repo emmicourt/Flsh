@@ -34,14 +34,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
+import emmyb.flush.Database.ProfileActivity;
 import emmyb.flush.IntialScreen;
 import emmyb.flush.R;
 
-
 public class MapsActivity extends AppCompatActivity implements
         OnMapReadyCallback,
-        OnMapLongClickListener,
-        View.OnClickListener{
+        OnMapLongClickListener{
+        //View.OnClickListener{
 
 
         private static final String TAG = MapsActivity.class.getSimpleName();
@@ -72,6 +72,9 @@ public class MapsActivity extends AppCompatActivity implements
         private static final String KEY_CAMERA_POSITION = "camera_position";
         private static final String KEY_LOCATION = "location";
 
+        // flag for add button
+        boolean addClickFlag = false;
+
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -87,8 +90,8 @@ public class MapsActivity extends AppCompatActivity implements
             // Retrieve the content view that renders the map.
             setContentView(R.layout.activity_maps);
 
-            signOut = (Button) findViewById(R.id.signOut);
-            signOut.setOnClickListener(this);
+            //signOut = (Button) findViewById(R.id.logout);
+            //signOut.setOnClickListener(this);
 
             // Construct a GeoDataClient.
             mGeoDataClient = Places.getGeoDataClient(this, null);
@@ -130,13 +133,25 @@ public class MapsActivity extends AppCompatActivity implements
 
         /**
          * Handles a click on the Restroom add button, enables the Map Long Click Listener.
+         * Handles a click on the logout button, signs the user out
          * @param item The menu item to handle.
          * @return Boolean.
          */
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {
             if (item.getItemId() == R.id.add) {
-                mMap.setOnMapLongClickListener(this);
+                if(!addClickFlag) {
+                    mMap.setOnMapLongClickListener(this);
+                }
+                if(addClickFlag){
+                    mMap.setOnMapLongClickListener(null);
+                    addClickFlag = false;
+                }
+            }
+            if (item.getItemId() == R.id.logout) {
+                Intent maps = new Intent(this, IntialScreen.class);
+                signOut();
+                startActivity(maps);
             }
             return true;
         }
@@ -287,15 +302,27 @@ public class MapsActivity extends AppCompatActivity implements
          * When user long clicks then it add marker to map
          * @param position
          */
-         public void onMapLongClick(LatLng position){
-            mMap.addMarker(new MarkerOptions().position(position));
+        public void onMapLongClick(LatLng position){
+            if(!addClickFlag) {
+                mMap.addMarker(new MarkerOptions().position(position));
+                //mProfileActivity = new ProfileActivity();
+                double latitudeDec = position.latitude;
+                double longitudeDec = position.longitude;
+                String Latt = String.valueOf(latitudeDec);
+                String Longg = String.valueOf(longitudeDec);
+                //mProfileActivity.newProfile(Latt, Longg);
+                addClickFlag = true;
+            }
         }
 
-    private void signOut(){
-        FirebaseAuth.getInstance().signOut();
-    }
+        /**
+         * Signs the user out of the database
+         */
+        private void signOut(){
+            FirebaseAuth.getInstance().signOut();
+        }
 
-    @Override
+    /*@Override
     public void onClick(View v) {
         Intent maps = new Intent(this, IntialScreen.class);
 
@@ -303,6 +330,6 @@ public class MapsActivity extends AppCompatActivity implements
             signOut();
             startActivity(maps);
         }
-    }
+    }*/
 }
 
