@@ -27,33 +27,13 @@ public class Profile {
         this.longitude = longitude;
         this.rating = 0;
         this.uuid = setUUID(latitude,longitude);
+        this.users = null;
     }
 
-    public Profile ( String uuid){
-        this.rating = 0;
-        this.uuid = uuid;
+    public Profile(String uuid) {
     }
 
-    public Map<String, Object> toMap() {
-        HashMap<String, Object> result = new HashMap<>();
-
-        result.put("rating", rating);
-        result.put("users", users);
-        return result;
-    }
-
-    private String setUUID(String latitude, String longitude) {
-        int a = latitude.indexOf('.');
-        int b = longitude.indexOf('.');
-        String lat = latitude.substring(0,a) + "-" + latitude.substring(a+1);
-        String lng = longitude.substring(0, b) + "-" + longitude.substring(b+1);
-
-        return lat + "$" + lng;
-    }
-
-    public double calcRating(double oldRating, double newRate){
-        return (oldRating + newRate) / 2;
-    }
+    // ------------------------ Getters and Setters ------------------------------------------------
 
     public String getLatitude(){
         return latitude;
@@ -83,24 +63,49 @@ public class Profile {
 
     public void setUsers(List<String> users) {this.users = users; }
 
+    // ------------------------ Profile Functions --------------------------------------------------
+
     public void addUser(String userId){
         if(!users.contains(userId)){
             users.add(userId);
         }
     }
+
+    public double calcRating(double oldRating, double newRate){
+        return (oldRating + newRate) / 2;
+    }
+
     public List<String> getUsers(){
         return users;
     }
 
+
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+
+        result.put("rating", rating);
+        result.put("users", users);
+        return result;
+    }
+
+    private String setUUID(String latitude, String longitude) {
+        int a = latitude.indexOf('.');
+        int b = longitude.indexOf('.');
+        String lat = latitude.substring(0,a) + "-" + latitude.substring(a+1);
+        String lng = longitude.substring(0, b) + "-" + longitude.substring(b+1);
+
+        return lat + "$" + lng;
+    }
+
     public String getLatFromUUID(String uuid){
-        int a = uuid.indexOf('$');
+        int a = uuid.indexOf('x');
         String latitude = uuid.substring(0, a);
         int b = latitude.indexOf('-');
         return latitude.substring(0, b) + '.' + latitude.substring(b+1);
     }
 
     public String getLongFromUUID(String uuid){
-        int a = uuid.indexOf('$');
+        int a = uuid.indexOf('x');
         String longitude = uuid.substring(a);
         int b = longitude.indexOf('-');
         return longitude.substring(0, b) + '.' + longitude.substring(b+1);

@@ -33,22 +33,32 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import emmyb.flush.Database.ProfileActivity;
 import emmyb.flush.IntialScreen;
+import emmyb.flush.Profiles.Profile;
 import emmyb.flush.R;
 
 public class MapsActivity extends AppCompatActivity implements
         OnMapReadyCallback,
         OnMapLongClickListener{
-        //View.OnClickListener{
 
 
         private static final String TAG = MapsActivity.class.getSimpleName();
         private GoogleMap mMap;
         private CameraPosition mCameraPosition;
-        private Button signOut;
         private FirebaseAuth firebaseAuth;
+
+        private ChildEventListener mChildEventListener;
+        private DatabaseReference mProfileRef = FirebaseDatabase.getInstance()
+                .getReference("Profiles");
+
+        ProfileActivity mProfileActivity = new ProfileActivity();
 
         // The entry points to the Places API.
         private GeoDataClient mGeoDataClient;
@@ -198,6 +208,9 @@ public class MapsActivity extends AppCompatActivity implements
 
             // Get the current location of the device and set the position of the map.
             getDeviceLocation();
+
+            // Add markers to map
+            addMarkersToMap(map);
         }
 
         /**
@@ -305,31 +318,60 @@ public class MapsActivity extends AppCompatActivity implements
         public void onMapLongClick(LatLng position){
             if(!addClickFlag) {
                 mMap.addMarker(new MarkerOptions().position(position));
-                //mProfileActivity = new ProfileActivity();
                 double latitudeDec = position.latitude;
                 double longitudeDec = position.longitude;
                 String Latt = String.valueOf(latitudeDec);
                 String Longg = String.valueOf(longitudeDec);
-                //mProfileActivity.newProfile(Latt, Longg);
+                mProfileActivity.newProfile(Latt, Longg);
                 addClickFlag = true;
             }
         }
 
-        /**
-         * Signs the user out of the database
+
+    /**
+     *
+     */
+    private void addMarkersToMap(final GoogleMap map){
+        mChildEventListener = mProfileRef.addChildEventListener(new ChildEventListener() {
+
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Profile aProfile = dataSnapshot.getValue(Profile.class);
+                assert aProfile != null;
+                String latitude = aProfile.getLatitude();
+                String longitude = aProfile.getLongitude();
+                LatLng pos = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
+                map.addMarker(new MarkerOptions().position(pos));
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
+    /**
+     * Signs the user out of the database
          */
         private void signOut(){
             FirebaseAuth.getInstance().signOut();
         }
-
-    /*@Override
-    public void onClick(View v) {
-        Intent maps = new Intent(this, IntialScreen.class);
-
-        if(v == signOut){
-            signOut();
-            startActivity(maps);
-        }
-    }*/
 }
 
