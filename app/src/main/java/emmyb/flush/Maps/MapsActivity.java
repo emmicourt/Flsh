@@ -55,7 +55,8 @@ public class MapsActivity extends AppCompatActivity implements
         private FirebaseAuth firebaseAuth;
 
         private ChildEventListener mChildEventListener;
-g                .getReference("Profiles");
+        private DatabaseReference mProfileRef = FirebaseDatabase.getInstance()
+                .getReference("Profiles");
 
         ProfileActivity mProfileActivity = new ProfileActivity();
 
