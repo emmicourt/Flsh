@@ -1,6 +1,7 @@
 package emmyb.flush;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -11,8 +12,10 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -32,16 +35,20 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class MapsActivity extends AppCompatActivity implements
         OnMapReadyCallback,
-        OnMapLongClickListener {
+        OnMapLongClickListener,
+        View.OnClickListener{
 
 
         private static final String TAG = MapsActivity.class.getSimpleName();
         private GoogleMap mMap;
         private CameraPosition mCameraPosition;
+        private Button signOut;
+        private FirebaseAuth firebaseAuth;
 
         // The entry points to the Places API.
         private GeoDataClient mGeoDataClient;
@@ -65,7 +72,6 @@ public class MapsActivity extends AppCompatActivity implements
         private static final String KEY_CAMERA_POSITION = "camera_position";
         private static final String KEY_LOCATION = "location";
 
-
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -76,8 +82,13 @@ public class MapsActivity extends AppCompatActivity implements
                 mCameraPosition = savedInstanceState.getParcelable(KEY_CAMERA_POSITION);
             }
 
+            firebaseAuth = FirebaseAuth.getInstance();
+
             // Retrieve the content view that renders the map.
             setContentView(R.layout.activity_maps);
+
+            signOut = (Button) findViewById(R.id.verifyEmail);
+            signOut.setOnClickListener(this);
 
             // Construct a GeoDataClient.
             mGeoDataClient = Places.getGeoDataClient(this, null);
@@ -92,7 +103,6 @@ public class MapsActivity extends AppCompatActivity implements
             SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.map);
             mapFragment.getMapAsync(this);
-
         }
 
         /**
@@ -280,5 +290,19 @@ public class MapsActivity extends AppCompatActivity implements
          public void onMapLongClick(LatLng position){
             mMap.addMarker(new MarkerOptions().position(position));
         }
+
+    private void signOut(){
+        FirebaseAuth.getInstance().signOut();
     }
+
+    @Override
+    public void onClick(View v) {
+        Intent maps = new Intent(this, IntialScreen.class);
+
+        if(v == signOut){
+            signOut();
+            startActivity(maps);
+        }
+    }
+}
 

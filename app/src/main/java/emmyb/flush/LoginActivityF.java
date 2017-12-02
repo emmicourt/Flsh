@@ -23,7 +23,6 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
     private static final String TAG = "LoginActivity";
     private Button signIn;
     private Button verifyEmail;
-    private Button popUpButt;
     private EditText editTextEmail;
     private EditText editTextPassword;
     private EditText editTextEmail1;
