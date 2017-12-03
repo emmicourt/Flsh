@@ -49,13 +49,16 @@ import emmyb.flush.R;
 public class MapsActivity extends AppCompatActivity implements
         OnMapReadyCallback,
         OnMapLongClickListener,
-        GoogleMap.OnCameraIdleListener {
+        GoogleMap.OnCameraIdleListener,
+        GoogleMap.OnMarkerClickListener {
 
 
         private static final String TAG = MapsActivity.class.getSimpleName();
         private GoogleMap mMap;
         private CameraPosition mCameraPosition;
         private FirebaseAuth firebaseAuth;
+
+        private Marker myMarker;
 
         private ChildEventListener mChildEventListener;
         private DatabaseReference mProfileRef = FirebaseDatabase.getInstance()
@@ -397,6 +400,11 @@ public class MapsActivity extends AppCompatActivity implements
                 Toast.LENGTH_SHORT).show();
 
         addMarkersToMap(mMap);
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        return false;
     }
 }
 
