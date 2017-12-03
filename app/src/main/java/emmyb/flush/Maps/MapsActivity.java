@@ -43,6 +43,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import emmyb.flush.Database.ProfileActivity;
 import emmyb.flush.IntialScreen;
+import emmyb.flush.ProfilePage;
 import emmyb.flush.Profiles.Profile;
 import emmyb.flush.R;
 
@@ -57,8 +58,6 @@ public class MapsActivity extends AppCompatActivity implements
         private GoogleMap mMap;
         private CameraPosition mCameraPosition;
         private FirebaseAuth firebaseAuth;
-
-        private Marker myMarker;
 
         private ChildEventListener mChildEventListener;
         private DatabaseReference mProfileRef = FirebaseDatabase.getInstance()
@@ -105,9 +104,6 @@ public class MapsActivity extends AppCompatActivity implements
 
             // Retrieve the content view that renders the map.
             setContentView(R.layout.activity_maps);
-
-            //signOut = (Button) findViewById(R.id.logout);
-            //signOut.setOnClickListener(this);
 
             // Construct a GeoDataClient.
             mGeoDataClient = Places.getGeoDataClient(this, null);
@@ -181,6 +177,7 @@ public class MapsActivity extends AppCompatActivity implements
             mMap = map;
 
             mMap.setOnCameraIdleListener(this);
+            mMap.setOnMarkerClickListener(this);
 
             // Use a custom info window adapter to handle multiple lines of text in the
             // info window contents.
@@ -387,10 +384,7 @@ public class MapsActivity extends AppCompatActivity implements
         return  bounds.contains(currentPosition);
     }
 
-    /**
-     * Signs the user out of the database
-         */
-        private void signOut(){
+    private void signOut(){
             FirebaseAuth.getInstance().signOut();
         }
 
@@ -404,6 +398,8 @@ public class MapsActivity extends AppCompatActivity implements
 
     @Override
     public boolean onMarkerClick(Marker marker) {
+        Intent profilePage = new Intent(this, ProfilePage.class);
+        startActivity(profilePage);
         return false;
     }
 }

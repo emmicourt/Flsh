@@ -8,9 +8,11 @@ import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.RatingBar.OnRatingBarChangeListener;
 import android.view.View.OnClickListener;
+import emmyb.flush.Database.ProfileActivity;
 
 public class ProfilePage extends AppCompatActivity {
 
+    private ProfileActivity a;
     private RatingBar ratingBar;
     private Button addRating;
     private RatingBar displayrating;
@@ -23,19 +25,20 @@ public class ProfilePage extends AppCompatActivity {
         addListenerOnRatingBar();
         addListenerOnButton();
         double a=0;
-        exisitingRating((double) a);
+        //exisitingRating((double) a);
 
     }
 
-    private void exisitingRating(double x){
+    private void exisitingRating(double latitude, double longitude){
+        double x = a.getRatingFromDatabase(latitude, longitude);
         displayrating = (RatingBar)findViewById(R.id.OverallRating);
         float f = (float) x;
         displayrating.setRating((float)  x);
 
     }
     private void updatingRating(double x, float y){
-
-
+        // lat, long, flout->double
+        //a.postNewRating(,);
     }
 
     private void addListenerOnRatingBar() {
