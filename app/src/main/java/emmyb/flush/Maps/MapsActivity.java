@@ -336,12 +336,15 @@ public class MapsActivity extends AppCompatActivity implements
 
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Profile aProfile = dataSnapshot.getValue(Profile.class);
-                assert aProfile != null;
-                String latitude = aProfile.getLatitude();
-                String longitude = aProfile.getLongitude();
-                LatLng pos = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
-                map.addMarker(new MarkerOptions().position(pos));
+
+                for(DataSnapshot profileSnapshots: dataSnapshot.getChildren() ){
+                    Profile aProfile = profileSnapshots.getValue(Profile.class);
+                    assert aProfile != null;
+                    String latitude = aProfile.getLatitude();
+                    String longitude = aProfile.getLongitude();
+                    LatLng pos = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
+                    map.addMarker(new MarkerOptions().position(pos));
+                }
             }
 
             @Override
