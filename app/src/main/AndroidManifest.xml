@@ -55,6 +55,7 @@
         <activity
             android:name=".Auth.LoginActivityG"
             android:label="Create User" />
+        <activity android:name=".ProfilePage"></activity>
     </application>
 
 </manifest>
