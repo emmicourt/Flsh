@@ -85,7 +85,9 @@ public class IntialScreen extends AppCompatActivity implements View.OnClickListe
             startActivity(login);
         }
     }
-
+    public Boolean returnLogin(){
+        return isLogin;
+    }
     @Override
     public void onClick(View v) {
         sendMessage(v);

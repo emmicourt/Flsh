@@ -49,8 +49,9 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         mIntialScreen = new IntialScreen();
 
-        if(mIntialScreen.isLogin){
+        if(mIntialScreen.returnLogin()){
             setContentView(R.layout.activity_login_f);
+            setTitle("Login");
             signIn = (Button) findViewById(R.id.signIn);
             editTextEmail = (EditText) findViewById(R.id.editTextEmail);
             editTextPassword = (EditText) findViewById(R.id.editTextPassword);
@@ -58,6 +59,7 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
             signIn.setOnClickListener(this);
         } else {
             setContentView(R.layout.activity_login_g);
+            setTitle("Sign Up");
             verifyEmail = (Button) findViewById(R.id.verifyEmail);
             editTextEmail1 = (EditText) findViewById(R.id.editTextEmail1);
             editTextPassword2 = (EditText) findViewById(R.id.editTextPassword2);

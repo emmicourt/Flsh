@@ -210,7 +210,7 @@ public class MapsActivity extends AppCompatActivity implements
             getDeviceLocation();
 
             // Add markers to map
-            addMarkersToMap(map);
+            //addMarkersToMap(map);
         }
 
         /**
@@ -312,7 +312,7 @@ public class MapsActivity extends AppCompatActivity implements
         }
 
         /**
-         * When user long clicks then it add marker to map
+         * When user long clicks => add a marker to map
          * @param position
          */
         public void onMapLongClick(LatLng position){
@@ -369,9 +369,9 @@ public class MapsActivity extends AppCompatActivity implements
 
     /**
      * Signs the user out of the database
-         */
-        private void signOut(){
-            FirebaseAuth.getInstance().signOut();
-        }
+     */
+    private void signOut(){
+        FirebaseAuth.getInstance().signOut();
+    }
 }
 
