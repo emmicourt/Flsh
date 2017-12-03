@@ -28,58 +28,14 @@ public class ProfileActivity extends FragmentActivity {
     private static final String TAG = "ProfileActivity";
     private static final String REQUIRED = "Required";
 
-    private DatabaseReference mDatabase;
-    private DatabaseReference mProfileReference;
-    private ValueEventListener mProfileListener;
+    private DatabaseReference mDatabase  =  FirebaseDatabase.getInstance().getReference();
     private Profile newProfile;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState  ){
         super.onCreate(savedInstanceState);
-        //if()setContentView();
 
-        //initialize database
-        mDatabase =  FirebaseDatabase.getInstance().getReference();
-    }
-
-    @Override
-    public void onStart(){
-        super.onStart();
-        // Add value event listener to the post
-        // [START post_value_event_listener]
-        ValueEventListener profileListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // Get Post object and use the values to update the UI
-               Profile profile = dataSnapshot.getValue(Profile.class);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                // [START_EXCLUDE]
-                Toast.makeText(ProfileActivity.this, "Failed to load post.",
-                        Toast.LENGTH_SHORT).show();
-                // [END_EXCLUDE]
-            }
-        };
-        mProfileReference.addValueEventListener(profileListener);
-        // [END post_value_event_listener]
-
-        // Keep copy of post listener so we can remove it when app stops
-        mProfileListener = profileListener;
-
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        if (mProfileListener != null) {
-            mProfileReference.removeEventListener(mProfileListener);
-        }
     }
 
 
