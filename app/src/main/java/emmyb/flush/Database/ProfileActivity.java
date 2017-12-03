@@ -28,83 +28,45 @@ public class ProfileActivity extends FragmentActivity {
     private static final String TAG = "ProfileActivity";
     private static final String REQUIRED = "Required";
 
-    private DatabaseReference mDatabase;
-    private DatabaseReference mProfileReference;
-    private ValueEventListener mProfileListener;
+    private DatabaseReference mDatabase  =  FirebaseDatabase.getInstance().getReference();
     private Profile newProfile;
-
+    private double rating;
 
     @Override
     protected void onCreate(Bundle savedInstanceState  ){
         super.onCreate(savedInstanceState);
-        //if()setContentView();
 
-        //initialize database
-        mDatabase =  FirebaseDatabase.getInstance().getReference();
-    }
-
-    @Override
-    public void onStart(){
-        super.onStart();
-        // Add value event listener to the post
-        // [START post_value_event_listener]
-        ValueEventListener profileListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // Get Post object and use the values to update the UI
-               Profile profile = dataSnapshot.getValue(Profile.class);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                // [START_EXCLUDE]
-                Toast.makeText(ProfileActivity.this, "Failed to load post.",
-                        Toast.LENGTH_SHORT).show();
-                // [END_EXCLUDE]
-            }
-        };
-        mProfileReference.addValueEventListener(profileListener);
-        // [END post_value_event_listener]
-
-        // Keep copy of post listener so we can remove it when app stops
-        mProfileListener = profileListener;
-
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        if (mProfileListener != null) {
-            mProfileReference.removeEventListener(mProfileListener);
-        }
     }
 
 
     // make new profile and adds it to firebase
-    public void newProfile (String latitiude, String longitude) {
+    public void newProfile (double latitiude, double longitude) {
         newProfile = new Profile(latitiude, longitude);
 
         DatabaseReference myRef = mDatabase.child("Profiles");
         myRef.push().setValue(newProfile);
     }
 
+
     // queries the database for a profile based on uuid
     // then creates and returns a profile object
-    public Profile getProfileFromDatabase(String latitude, String longitude){
-        final Profile aProfile = new Profile(latitude, longitude);
-        final DatabaseReference ref = mDatabase.child("Profiles").child(aProfile.getUUID());
-        ref.addValueEventListener(new ValueEventListener() {
+    public double getRatingFromDatabase(final double latitude, final double longitude){
+        final DatabaseReference ref = mDatabase.child("Profiles");
 
+
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot messageSnapshot: dataSnapshot.getChildren()) {
-                    aProfile.setRating((double)messageSnapshot.child("rating").getValue());
-                    aProfile.setUsers((List<String>) messageSnapshot.child("users").getValue());
-                }
+                double lati;
+                double longg;
+                for (DataSnapshot profileSnapshot: dataSnapshot.getChildren()) {
+                    lati = (Double) profileSnapshot.child("latitude").getValue();
+                    longg = (Double) profileSnapshot.child("longitude").getValue();
 
+                    if (lati == latitude && longg == longitude){
+                        rating =  (Double)profileSnapshot.child("rating").getValue();
+                    }
+                }
             }
 
             @Override
@@ -114,23 +76,48 @@ public class ProfileActivity extends FragmentActivity {
 
         });
 
-        return aProfile;
+        return rating;
+    }
+
+    public double calcRating(double oldRating, double newRate){
+        return (oldRating + newRate) / 2;
     }
 
     // gets an existing profile from the database and takes a new rating from the user
     // if the user has not already rated this particular profile then it takes an
     // average of the existing and updates the value in firebsae
-    public void postNewRating(String latitude, String longitude, int rate){
-        Profile aProfile = getProfileFromDatabase(latitude, longitude);
-        final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+    public void postNewRating(final double latitude, final double longitude, double rate){
+        final DatabaseReference ref = mDatabase.child("Profiles");
+        double oldrating = getRatingFromDatabase(latitude, longitude);
 
-        int newValue = (int) aProfile.calcRating(aProfile.getRating(), rate);
-        aProfile.setRating(newValue);
-        aProfile.addUser(userId);
-        mDatabase.child("Profiles").child(aProfile.getUUID()).child("users").setValue(aProfile.getUsers());
+        final double rating = calcRating(oldrating, rate);
 
-        DatabaseReference ref = mDatabase.child("Profiles").child(aProfile.getUUID()).child("rates");
-        ref.setValue(newValue);
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                double lati;
+                double longg;
+                for (DataSnapshot profileSnapshot: dataSnapshot.getChildren()) {
+                    lati = (Double) profileSnapshot.child("latitude").getValue();
+                    longg = (Double) profileSnapshot.child("longitude").getValue();
+
+                    if (lati == latitude && longg == longitude){
+                        String key = profileSnapshot.getKey();
+
+                        ref.child(key).child("rating").setValue(rating);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+        });
+
+
     }
 
 }

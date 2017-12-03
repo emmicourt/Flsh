@@ -14,7 +14,7 @@ public class ShouldAverageRatings {
 
     @Test
     public void calcAverageRating(){
-        Profile testProfile = new Profile("123.456", "456.789");
+        Profile testProfile = new Profile(123.456, 456.789);
 
         testProfile.setRating(4);
         double resultingRating = testProfile.calcRating(2, 4);

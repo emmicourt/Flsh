@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -28,6 +29,7 @@ import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -46,7 +48,8 @@ import emmyb.flush.R;
 
 public class MapsActivity extends AppCompatActivity implements
         OnMapReadyCallback,
-        OnMapLongClickListener{
+        OnMapLongClickListener,
+        GoogleMap.OnCameraIdleListener {
 
 
         private static final String TAG = MapsActivity.class.getSimpleName();
@@ -174,6 +177,8 @@ public class MapsActivity extends AppCompatActivity implements
         public void onMapReady(GoogleMap map) {
             mMap = map;
 
+            mMap.setOnCameraIdleListener(this);
+
             // Use a custom info window adapter to handle multiple lines of text in the
             // info window contents.
             mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
@@ -183,6 +188,7 @@ public class MapsActivity extends AppCompatActivity implements
                 public View getInfoWindow(Marker arg0) {
                     return null;
                 }
+
 
                 @Override
                 public View getInfoContents(Marker marker) {
@@ -320,9 +326,7 @@ public class MapsActivity extends AppCompatActivity implements
                 mMap.addMarker(new MarkerOptions().position(position));
                 double latitudeDec = position.latitude;
                 double longitudeDec = position.longitude;
-                String Latt = String.valueOf(latitudeDec);
-                String Longg = String.valueOf(longitudeDec);
-                mProfileActivity.newProfile(Latt, Longg);
+                mProfileActivity.newProfile(latitudeDec, longitudeDec);
                 addClickFlag = true;
             }
         }
@@ -336,12 +340,19 @@ public class MapsActivity extends AppCompatActivity implements
 
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Profile aProfile = dataSnapshot.getValue(Profile.class);
-                assert aProfile != null;
-                String latitude = aProfile.getLatitude();
-                String longitude = aProfile.getLongitude();
-                LatLng pos = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
-                map.addMarker(new MarkerOptions().position(pos));
+
+                for(DataSnapshot profileSnapshots: dataSnapshot.getChildren() ){
+                    String latitude = (String)profileSnapshots.child("latitude").getValue();
+                    String longitude = (String)profileSnapshots.child("longitude").getValue();
+
+                    double lati = Double.parseDouble(latitude);
+                    double longg  = Double.parseDouble(longitude);
+
+                    if(isInBound(lati, longg)){
+                        LatLng pos = new LatLng(lati, longg);
+                        map.addMarker(new MarkerOptions().position(pos));
+                    }
+                }
             }
 
             @Override
@@ -367,11 +378,25 @@ public class MapsActivity extends AppCompatActivity implements
 
     }
 
+    private boolean isInBound(double lati, double longg) {
+        LatLng currentPosition = new LatLng(lati, longg);
+        LatLngBounds bounds = mMap.getProjection().getVisibleRegion().latLngBounds;
+        return  bounds.contains(currentPosition);
+    }
+
     /**
      * Signs the user out of the database
          */
         private void signOut(){
             FirebaseAuth.getInstance().signOut();
         }
+
+    @Override
+    public void onCameraIdle() {
+        Toast.makeText(this, "The camera has stopped moving.",
+                Toast.LENGTH_SHORT).show();
+
+        addMarkersToMap(mMap);
+    }
 }
 
