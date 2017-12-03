@@ -41,7 +41,6 @@ public class ProfileActivity extends FragmentActivity {
 
     }
 
-
     // make new profile and adds it to firebase
     public void newProfile (double latitiude, double longitude) {
         newProfile = new Profile(latitiude, longitude);
@@ -100,27 +99,6 @@ public class ProfileActivity extends FragmentActivity {
 
         );
 
-        /*ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                double lati;
-                double longg;
-                for (DataSnapshot profileSnapshot: dataSnapshot.getChildren()) {
-                    lati = (Double) profileSnapshot.child("latitude").getValue();
-                    longg = (Double) profileSnapshot.child("longitude").getValue();
-
-                    if (lati == latitude && longg == longitude){
-                        rating =  (Double)profileSnapshot.child("rating").getValue();
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-
-        });*/
         System.out.println("Jesssica is "+rating+"super >>>");
         return rating;
     }
