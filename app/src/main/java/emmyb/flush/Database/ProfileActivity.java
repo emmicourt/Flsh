@@ -86,10 +86,38 @@ public class ProfileActivity extends FragmentActivity {
     // gets an existing profile from the database and takes a new rating from the user
     // if the user has not already rated this particular profile then it takes an
     // average of the existing and updates the value in firebsae
-    public void postNewRating(double latitude, double longitude, double rate){
-        /*
-        double rating = calcRating(oldrating, rate);
-        */
+    public void postNewRating(final double latitude, final double longitude, double rate){
+        final DatabaseReference ref = mDatabase.child("Profiles");
+        double oldrating = getRatingFromDatabase(latitude, longitude);
+
+        final double rating = calcRating(oldrating, rate);
+
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                double lati;
+                double longg;
+                for (DataSnapshot profileSnapshot: dataSnapshot.getChildren()) {
+                    lati = (Double) profileSnapshot.child("latitude").getValue();
+                    longg = (Double) profileSnapshot.child("longitude").getValue();
+
+                    if (lati == latitude && longg == longitude){
+                        String key = profileSnapshot.getKey();
+
+                        ref.child(key).child("rating").setValue(rating);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+        });
+
+
     }
 
 }
