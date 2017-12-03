@@ -58,6 +58,9 @@ public class MapsActivity extends AppCompatActivity implements
         GoogleMap.OnMarkerClickListener {
 
 
+        public static double currentLatitude;
+        public static double currentLongitude;
+
         private static final String TAG = MapsActivity.class.getSimpleName();
         private GoogleMap mMap;
         private CameraPosition mCameraPosition;
@@ -183,34 +186,7 @@ public class MapsActivity extends AppCompatActivity implements
 
             mMap.setOnCameraIdleListener(this);
             mMap.setOnMarkerClickListener(this);
-
-            // Use a custom info window adapter to handle multiple lines of text in the
-            // info window contents.
-            mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
-
-                @Override
-                // Return null here, so that getInfoContents() is called next.
-                public View getInfoWindow(Marker arg0) {
-                    return null;
-                }
-
-
-                @Override
-                public View getInfoContents(Marker marker) {
-                    // Inflate the layouts for the info window, title and snippet.
-                    View infoWindow = getLayoutInflater().inflate(R.layout.custom_info_contents,
-                            (FrameLayout) findViewById(R.id.map), false);
-
-                    TextView title = ((TextView) infoWindow.findViewById(R.id.title));
-                    title.setText(marker.getTitle());
-
-                    TextView snippet = ((TextView) infoWindow.findViewById(R.id.snippet));
-                    snippet.setText(marker.getSnippet());
-
-                    return infoWindow;
-                }
-            });
-
+            
             // Prompt the user for permission.
             getLocationPermission();
 
@@ -374,44 +350,6 @@ public class MapsActivity extends AppCompatActivity implements
                 }
 
         );
-        /*mChildEventListener = mProfileRef.addChildEventListener(new ChildEventListener() {
-
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-
-                for(DataSnapshot profileSnapshots: dataSnapshot.getChildren() ){
-                    String key = profileSnapshots.getKey();
-                    Log.d("TAG",key);
-                    double latt = (double)profileSnapshots.child("latitude").getValue();
-                    double longg = (double)profileSnapshots.child("longitude").getValue();
-
-                    if(isInBound(latt, longg)){
-                        LatLng pos = new LatLng(latt, longg);
-                        map.addMarker(new MarkerOptions().position(pos));
-                    }
-                }
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });*/
 
     }
 
@@ -459,8 +397,10 @@ public class MapsActivity extends AppCompatActivity implements
     public boolean onMarkerClick(Marker marker) {
         Intent profilePage = new Intent(this, ProfilePage.class);
         LatLng position = marker.getPosition();
-        mProfilePage.existingRating(position.latitude, position.longitude);
+
         startActivity(profilePage);
+        currentLatitude = position.latitude;
+        currentLongitude = position.longitude;
         //try to retrieve the data from the marker
         //String info = (String) marker.getTag();
 

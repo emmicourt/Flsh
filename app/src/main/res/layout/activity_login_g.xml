@@ -33,6 +33,14 @@
                 android:hint="Enter your password"
                 android:inputType="textPassword" />
 
+            <EditText
+                android:id="@+id/editTextPassword3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:hint="Re-enter your password"
+                android:inputType="textPassword" />
+
             <Button
                 android:id="@+id/verifyEmail"
                 android:layout_width="match_parent"
