@@ -30,7 +30,8 @@ public class Profile {
         this.users = null;
     }
 
-    public Profile(String uuid) {
+    public Profile() {
+
     }
 
     // ------------------------ Getters and Setters ------------------------------------------------
