@@ -352,14 +352,14 @@ public class MapsActivity extends AppCompatActivity implements
                             //Get a profile map
                             Map singlePlace = (Map) entry.getValue();
                             //get latitude and append to list
-                            String a = (String)singlePlace.get("latitude");
-                            String b = (String)singlePlace.get("longitude");
-                            latt.add(Double.parseDouble(a));
-                            longg.add(Double.parseDouble(b));
+                            //String a = (String)singlePlace.get("latitude");
+                            //String b = (String)singlePlace.get("longitude");
+                            latt.add(Double.parseDouble(String.valueOf(singlePlace.get("latitude"))));
+                            longg.add(Double.parseDouble(String.valueOf(singlePlace.get("longitude"))));
                             //if(isInBound(latt.get(n), longg.get(n))){
                                 LatLng pos = new LatLng(latt.get(n), longg.get(n));
                                 map.addMarker(new MarkerOptions().position(pos));
-                            n++;
+                                n++;
                             //}
                         }
                         //double latt = collectLatt((Map<String,Object>)dataSnapshot.getValue());
@@ -442,18 +442,9 @@ public class MapsActivity extends AppCompatActivity implements
         return  bounds.contains(currentPosition);
     }
 
-<<<<<<< HEAD
-    /**
-     * Signs the user out of the database
-     */
-    private void signOut(){
-        FirebaseAuth.getInstance().signOut();
-    }
-=======
     private void signOut(){
             FirebaseAuth.getInstance().signOut();
         }
->>>>>>> 29102667fd7cfeb28c1c530e58911ede374cf3a6
 
     @Override
     public void onCameraIdle() {
