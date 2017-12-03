@@ -14,7 +14,7 @@ import emmyb.flush.Database.ProfileActivity;
 
 public class ProfilePage extends AppCompatActivity {
 
-    private ProfileActivity a;
+    ProfileActivity a = new ProfileActivity();
     private RatingBar ratingBar;
     private Button addRating;
     private RatingBar displayrating;
@@ -23,19 +23,22 @@ public class ProfilePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_page);
-
+        displayrating = (RatingBar)findViewById(R.id.OverallRating);
         addListenerOnRatingBar();
         addListenerOnButton();
-        double a=0;
+        //double a=0;
         //exisitingRating((double) a);
 
     }
 
-    public void exisitingRating(double latitude, double longitude){
+
+    public void existingRating(double latitude, double longitude){
+
         double x = a.getRatingFromDatabase(latitude, longitude);
-        displayrating = (RatingBar)findViewById(R.id.OverallRating);
-        float f = (float) x;
-        displayrating.setRating((float)  x);
+        System.out.println("whatsx="+x+"######");
+        float f = (float)x;
+        System.out.println("WTTTTTTTTHHHHHHHHH"+f);
+       // displayrating.setRating(f);
 
     }
     private void updatingRating(double x, float y){
