@@ -47,13 +47,15 @@ import java.util.Map;
 
 import emmyb.flush.Database.ProfileActivity;
 import emmyb.flush.IntialScreen;
+import emmyb.flush.ProfilePage;
 import emmyb.flush.Profiles.Profile;
 import emmyb.flush.R;
 
 public class MapsActivity extends AppCompatActivity implements
         OnMapReadyCallback,
         OnMapLongClickListener,
-        GoogleMap.OnCameraIdleListener {
+        GoogleMap.OnCameraIdleListener,
+        GoogleMap.OnMarkerClickListener {
 
 
         private static final String TAG = MapsActivity.class.getSimpleName();
@@ -106,9 +108,6 @@ public class MapsActivity extends AppCompatActivity implements
 
             // Retrieve the content view that renders the map.
             setContentView(R.layout.activity_maps);
-
-            //signOut = (Button) findViewById(R.id.logout);
-            //signOut.setOnClickListener(this);
 
             // Construct a GeoDataClient.
             mGeoDataClient = Places.getGeoDataClient(this, null);
@@ -182,6 +181,7 @@ public class MapsActivity extends AppCompatActivity implements
             mMap = map;
 
             mMap.setOnCameraIdleListener(this);
+            mMap.setOnMarkerClickListener(this);
 
             // Use a custom info window adapter to handle multiple lines of text in the
             // info window contents.
@@ -442,12 +442,18 @@ public class MapsActivity extends AppCompatActivity implements
         return  bounds.contains(currentPosition);
     }
 
+<<<<<<< HEAD
     /**
      * Signs the user out of the database
      */
     private void signOut(){
         FirebaseAuth.getInstance().signOut();
     }
+=======
+    private void signOut(){
+            FirebaseAuth.getInstance().signOut();
+        }
+>>>>>>> 29102667fd7cfeb28c1c530e58911ede374cf3a6
 
     @Override
     public void onCameraIdle() {
@@ -455,6 +461,13 @@ public class MapsActivity extends AppCompatActivity implements
                 Toast.LENGTH_SHORT).show();
 
         addMarkersToMap(mMap);
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        Intent profilePage = new Intent(this, ProfilePage.class);
+        startActivity(profilePage);
+        return false;
     }
 }
 
