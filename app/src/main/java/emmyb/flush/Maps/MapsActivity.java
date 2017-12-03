@@ -40,6 +40,10 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.Map;
 
 import emmyb.flush.Database.ProfileActivity;
 import emmyb.flush.IntialScreen;
@@ -216,7 +220,7 @@ public class MapsActivity extends AppCompatActivity implements
             getDeviceLocation();
 
             // Add markers to map
-            addMarkersToMap(map);
+            addMarkersToMap(mMap);
         }
 
         /**
@@ -336,20 +340,52 @@ public class MapsActivity extends AppCompatActivity implements
      *
      */
     private void addMarkersToMap(final GoogleMap map){
-        mChildEventListener = mProfileRef.addChildEventListener(new ChildEventListener() {
+        mProfileRef.addListenerForSingleValueEvent(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        ArrayList<Double> latt = new ArrayList<>();
+                        ArrayList<Double> longg = new ArrayList<>();
+                        Map<String,Object> profiles = (Map<String,Object>)dataSnapshot.getValue();
+                        int n = 0;
+                        for(Map.Entry<String,Object> entry : profiles.entrySet()){
+                            //Get a profile map
+                            Map singlePlace = (Map) entry.getValue();
+                            //get latitude and append to list
+                            String a = (String)singlePlace.get("latitude");
+                            String b = (String)singlePlace.get("longitude");
+                            latt.add(Double.parseDouble(a));
+                            longg.add(Double.parseDouble(b));
+                            //if(isInBound(latt.get(n), longg.get(n))){
+                                LatLng pos = new LatLng(latt.get(n), longg.get(n));
+                                map.addMarker(new MarkerOptions().position(pos));
+                            n++;
+                            //}
+                        }
+                        //double latt = collectLatt((Map<String,Object>)dataSnapshot.getValue());
+                        //collectLongg((Map<String,Object>)dataSnapshot.getValue()));
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                }
+
+        );
+        /*mChildEventListener = mProfileRef.addChildEventListener(new ChildEventListener() {
 
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
                 for(DataSnapshot profileSnapshots: dataSnapshot.getChildren() ){
-                    String latitude = (String)profileSnapshots.child("latitude").getValue();
-                    String longitude = (String)profileSnapshots.child("longitude").getValue();
+                    String key = profileSnapshots.getKey();
+                    Log.d("TAG",key);
+                    double latt = (double)profileSnapshots.child("latitude").getValue();
+                    double longg = (double)profileSnapshots.child("longitude").getValue();
 
-                    double lati = Double.parseDouble(latitude);
-                    double longg  = Double.parseDouble(longitude);
-
-                    if(isInBound(lati, longg)){
-                        LatLng pos = new LatLng(lati, longg);
+                    if(isInBound(latt, longg)){
+                        LatLng pos = new LatLng(latt, longg);
                         map.addMarker(new MarkerOptions().position(pos));
                     }
                 }
@@ -374,12 +410,34 @@ public class MapsActivity extends AppCompatActivity implements
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        });
+        });*/
 
     }
 
-    private boolean isInBound(double lati, double longg) {
-        LatLng currentPosition = new LatLng(lati, longg);
+    /*private double collectLatt(Map<String,Object> profiles){
+        ArrayList<Long> latt = new ArrayList<>();
+
+        for(Map.Entry<String,Object> entry : profiles.entrySet()){
+            //Get a profile map
+            Map singlePlace = (Map) entry.getValue();
+            //get latitude and append to list
+            latt.add((Long)singlePlace.get("latitude"));
+        }
+
+    }
+    private double collectLongg(Map<String,Object> profiles){
+        ArrayList<Long> longg = new ArrayList<>();
+
+        for(Map.Entry<String,Object> entry : profiles.entrySet()){
+            //Get a profile map
+            Map singlePlace = (Map) entry.getValue();
+            //get latitude and append to list
+            longg.add((Long)singlePlace.get("longitude"));
+        }
+        return
+    }*/
+    private boolean isInBound(double latt, double longg) {
+        LatLng currentPosition = new LatLng(latt, longg);
         LatLngBounds bounds = mMap.getProjection().getVisibleRegion().latLngBounds;
         return  bounds.contains(currentPosition);
     }

@@ -3,11 +3,20 @@
 
     <item
         is-multidex="true"
+        jar="/Users/Sleano/Desktop/Flsh/Flsh/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/Sleano/Desktop/Flsh/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_ff0983ddba5c602de215f4b80d9cbb187a3302ef/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/Sleano/Desktop/Flsh/Flsh/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="f73a557792c97d60c2aa58ab88c0de32cf5bdbb7">
+        sha1="151c0015fc52709a7bf3b79be2ac9b2647abde78">
         <dex dex="/Users/Sleano/Desktop/Flsh/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_aeaec07550dbcaf0cfa7b3732014a3c07757883a/classes.dex" />
     </item>
 
