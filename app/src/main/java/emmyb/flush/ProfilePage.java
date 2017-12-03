@@ -27,7 +27,7 @@ public class ProfilePage extends AppCompatActivity {
         addListenerOnRatingBar();
         addListenerOnButton();
         //double a=0;
-        //exisitingRating((double) a);
+        //existingRating((double) a);
 
     }
 
@@ -39,11 +39,13 @@ public class ProfilePage extends AppCompatActivity {
         float f = (float)x;
         System.out.println("WTTTTTTTTHHHHHHHHH"+f);
        // displayrating.setRating(f);
+        //displayrating.setStepSize();
 
     }
-    private void updatingRating(double x, float y){
+    public void updateRating(double latitude, double longitude, float y){
+        double w = y;
         // lat, long, flout->double
-        //a.postNewRating(,);
+        //a.postNewRating(latitude, longitude, w);
     }
 
     public void addListenerOnRatingBar() {

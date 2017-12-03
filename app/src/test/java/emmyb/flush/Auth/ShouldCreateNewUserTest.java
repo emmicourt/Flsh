@@ -5,4 +5,6 @@ package emmyb.flush.Auth;
  */
 
 public class ShouldCreateNewUserTest {
+
+    
 }
