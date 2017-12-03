@@ -186,34 +186,7 @@ public class MapsActivity extends AppCompatActivity implements
 
             mMap.setOnCameraIdleListener(this);
             mMap.setOnMarkerClickListener(this);
-
-            // Use a custom info window adapter to handle multiple lines of text in the
-            // info window contents.
-            mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
-
-                @Override
-                // Return null here, so that getInfoContents() is called next.
-                public View getInfoWindow(Marker arg0) {
-                    return null;
-                }
-
-
-                @Override
-                public View getInfoContents(Marker marker) {
-                    // Inflate the layouts for the info window, title and snippet.
-                    View infoWindow = getLayoutInflater().inflate(R.layout.custom_info_contents,
-                            (FrameLayout) findViewById(R.id.map), false);
-
-                    TextView title = ((TextView) infoWindow.findViewById(R.id.title));
-                    title.setText(marker.getTitle());
-
-                    TextView snippet = ((TextView) infoWindow.findViewById(R.id.snippet));
-                    snippet.setText(marker.getSnippet());
-
-                    return infoWindow;
-                }
-            });
-
+            
             // Prompt the user for permission.
             getLocationPermission();
 
