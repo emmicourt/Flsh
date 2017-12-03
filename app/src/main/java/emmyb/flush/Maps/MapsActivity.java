@@ -68,6 +68,7 @@ public class MapsActivity extends AppCompatActivity implements
                 .getReference("Profiles");
 
         ProfileActivity mProfileActivity = new ProfileActivity();
+        ProfilePage mProfilePage = new ProfilePage();
 
         // The entry points to the Places API.
         private GeoDataClient mGeoDataClient;
@@ -322,7 +323,7 @@ public class MapsActivity extends AppCompatActivity implements
         }
 
         /**
-         * When user long clicks => add a marker to map
+         * When user long clicks, add a marker to map
          * @param position
          */
         public void onMapLongClick(LatLng position){
@@ -457,7 +458,12 @@ public class MapsActivity extends AppCompatActivity implements
     @Override
     public boolean onMarkerClick(Marker marker) {
         Intent profilePage = new Intent(this, ProfilePage.class);
+        LatLng position = marker.getPosition();
+        mProfilePage.existingRating(position.latitude, position.longitude);
         startActivity(profilePage);
+        //try to retrieve the data from the marker
+        //String info = (String) marker.getTag();
+
         return false;
     }
 }

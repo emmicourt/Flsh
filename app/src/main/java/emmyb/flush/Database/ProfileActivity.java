@@ -6,6 +6,8 @@ import android.util.Log;
 import android.widget.Toast;
 import android.support.v4.app.FragmentActivity;
 
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -13,9 +15,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
+import java.lang.*;
 import emmyb.flush.Maps.MapsActivity;
 import emmyb.flush.Profiles.Profile;
 
@@ -30,7 +33,7 @@ public class ProfileActivity extends FragmentActivity {
 
     private DatabaseReference mDatabase  =  FirebaseDatabase.getInstance().getReference();
     private Profile newProfile;
-    private double rating;
+    private double rating = 90.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState  ){
@@ -48,13 +51,56 @@ public class ProfileActivity extends FragmentActivity {
     }
 
 
-    // queries the database for a profile based on uuid
+    // queries the database for a profile based
     // then creates and returns a profile object
     public double getRatingFromDatabase(final double latitude, final double longitude){
         final DatabaseReference ref = mDatabase.child("Profiles");
+        ref.addListenerForSingleValueEvent(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        ArrayList<Double> latt = new ArrayList<>();
+                        ArrayList<Double> longg = new ArrayList<>();
+                        ArrayList<Double> ratings = new ArrayList<>();
+                        //double latt = 0;
+                        //double longg = 0;
+                        int n = 0;
+                        Map<String,Object> profiles = (Map<String,Object>)dataSnapshot.getValue();
 
+                        for(Map.Entry<String,Object> entry : profiles.entrySet()){
+                            //Get a profile map
+                            Map singlePlace = (Map) entry.getValue();
+                            //get latitude and append to list
+                            //String a = (String)singlePlace.get("latitude");
+                            latt.add(Double.parseDouble(String.valueOf(singlePlace.get("latitude"))));
+                            longg.add(Double.parseDouble(String.valueOf(singlePlace.get("longitude"))));
+                            ratings.add(Double.parseDouble(String.valueOf(singlePlace.get("rating"))));
+                            System.out.print("heyyyyyyyyy!!!!!!!!!!!!");
+                            double getLatt = latt.get(n);
+                            double getLongg = longg.get(n);
+                            double rat = ratings.get(n);
+                            rating = ratings.get(n);
+                            //int longgCheck = Double.compareTo(longg.get(n),longitude);
+                            //if (getLatt.equals(latitude)&&getLongg.equals(longitude)){
+                                System.out.println(">>>>>>>"+rating + "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+n);
+                              //  rating =  (Double.parseDouble(String.valueOf(singlePlace.get("rating"))));
+                            //}
+                            n++;
 
-        ref.addValueEventListener(new ValueEventListener() {
+                        }
+                        //double latt = collectLatt((Map<String,Object>)dataSnapshot.getValue());
+                        //collectLongg((Map<String,Object>)dataSnapshot.getValue()));
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                }
+
+        );
+
+        /*ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 double lati;
@@ -74,8 +120,8 @@ public class ProfileActivity extends FragmentActivity {
 
             }
 
-        });
-
+        });*/
+        System.out.println("Jesssica is "+rating+"super >>>");
         return rating;
     }
 
