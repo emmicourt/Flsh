@@ -30,7 +30,7 @@ public class ProfileActivity extends FragmentActivity {
 
     private DatabaseReference mDatabase  =  FirebaseDatabase.getInstance().getReference();
     private Profile newProfile;
-
+    private double rating;
 
     @Override
     protected void onCreate(Bundle savedInstanceState  ){
@@ -40,27 +40,33 @@ public class ProfileActivity extends FragmentActivity {
 
 
     // make new profile and adds it to firebase
-    public void newProfile (String latitiude, String longitude) {
+    public void newProfile (double latitiude, double longitude) {
         newProfile = new Profile(latitiude, longitude);
 
         DatabaseReference myRef = mDatabase.child("Profiles");
         myRef.push().setValue(newProfile);
     }
 
+
     // queries the database for a profile based on uuid
     // then creates and returns a profile object
-    public Profile getProfileFromDatabase(String latitude, String longitude){
-        final Profile aProfile = new Profile(latitude, longitude);
-        final DatabaseReference ref = mDatabase.child("Profiles").child(aProfile.getUUID());
-        ref.addValueEventListener(new ValueEventListener() {
+    public double getRatingFromDatabase(final double latitude, final double longitude){
+        final DatabaseReference ref = mDatabase.child("Profiles");
 
+
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot messageSnapshot: dataSnapshot.getChildren()) {
-                    aProfile.setRating((double)messageSnapshot.child("rating").getValue());
-                    aProfile.setUsers((List<String>) messageSnapshot.child("users").getValue());
-                }
+                double lati;
+                double longg;
+                for (DataSnapshot profileSnapshot: dataSnapshot.getChildren()) {
+                    lati = (Double) profileSnapshot.child("latitude").getValue();
+                    longg = (Double) profileSnapshot.child("longitude").getValue();
 
+                    if (lati == latitude && longg == longitude){
+                        rating =  (Double)profileSnapshot.child("rating").getValue();
+                    }
+                }
             }
 
             @Override
@@ -70,23 +76,20 @@ public class ProfileActivity extends FragmentActivity {
 
         });
 
-        return aProfile;
+        return rating;
+    }
+
+    public double calcRating(double oldRating, double newRate){
+        return (oldRating + newRate) / 2;
     }
 
     // gets an existing profile from the database and takes a new rating from the user
     // if the user has not already rated this particular profile then it takes an
     // average of the existing and updates the value in firebsae
-    public void postNewRating(String latitude, String longitude, int rate){
-        Profile aProfile = getProfileFromDatabase(latitude, longitude);
-        final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
-        int newValue = (int) aProfile.calcRating(aProfile.getRating(), rate);
-        aProfile.setRating(newValue);
-        aProfile.addUser(userId);
-        mDatabase.child("Profiles").child(aProfile.getUUID()).child("users").setValue(aProfile.getUsers());
-
-        DatabaseReference ref = mDatabase.child("Profiles").child(aProfile.getUUID()).child("rates");
-        ref.setValue(newValue);
+    public void postNewRating(double latitude, double longitude, double rate){
+        /*
+        double rating = calcRating(oldrating, rate);
+        */
     }
 
 }

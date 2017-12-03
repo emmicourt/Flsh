@@ -326,9 +326,7 @@ public class MapsActivity extends AppCompatActivity implements
                 mMap.addMarker(new MarkerOptions().position(position));
                 double latitudeDec = position.latitude;
                 double longitudeDec = position.longitude;
-                String Latt = String.valueOf(latitudeDec);
-                String Longg = String.valueOf(longitudeDec);
-                mProfileActivity.newProfile(Latt, Longg);
+                mProfileActivity.newProfile(latitudeDec, longitudeDec);
                 addClickFlag = true;
             }
         }
