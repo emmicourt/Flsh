@@ -24,14 +24,10 @@ import emmyb.flush.R;
 
 public class LoginActivityF extends AppCompatActivity implements View.OnClickListener{
     public static final String EXTRA_MESSAGE = "emmyb.flush";
-    private static final String TAG = "LoginActivity";
+    private static final String TAG = "LoginActivityF";
     private Button signIn;
-    private Button verifyEmail;
     private EditText editTextEmail;
     private EditText editTextPassword;
-    private EditText editTextEmail1;
-    private EditText editTextPassword2;
-
 
     private ProgressDialog progressDialog;
 
@@ -49,56 +45,22 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         mIntialScreen = new IntialScreen();
 
-        if(mIntialScreen.returnLogin()){
-            setContentView(R.layout.activity_login_f);
-            setTitle("Login");
-            signIn = (Button) findViewById(R.id.signIn);
-            editTextEmail = (EditText) findViewById(R.id.editTextEmail);
-            editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-            editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-            signIn.setOnClickListener(this);
-        } else {
-            setContentView(R.layout.activity_login_g);
-            setTitle("Sign Up");
-            verifyEmail = (Button) findViewById(R.id.verifyEmail);
-            editTextEmail1 = (EditText) findViewById(R.id.editTextEmail1);
-            editTextPassword2 = (EditText) findViewById(R.id.editTextPassword2);
-            verifyEmail.setOnClickListener(this);
-        }
+
+        setContentView(R.layout.activity_login_f);
+        signIn = (Button) findViewById(R.id.signIn);
+        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
+        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
+        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
+        signIn.setOnClickListener(this);
 
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
 
     }
 
-    private void registerUser(){
-        String email = editTextEmail1.getText().toString().trim();
-        String password = editTextPassword2.getText().toString().trim();
-
-        if(TextUtils.isEmpty(email)){
-            Toast.makeText(this, "Please Enter email", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if(TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "Please Enter password", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        /* Firebase magic */
-        createAccount(email, password);
-        /* End of firebase magic */
-
-        progressDialog.setMessage("Register User");
-        progressDialog.show();
-
-    }
-
     @Override
     public void onClick(View view) {
-        if(view == verifyEmail){
-            registerUser();
-            //sendEmailVerification();
-        } else if (view == signIn) {
+        if (view == signIn) {
             String email = editTextEmail.getText().toString().trim();
             String password = editTextPassword.getText().toString().trim();
             /* Firebase magic */
