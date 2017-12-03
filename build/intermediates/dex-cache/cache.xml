@@ -11,13 +11,58 @@
         <dex dex="/Users/Sleano/Desktop/Flsh/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_ff0983ddba5c602de215f4b80d9cbb187a3302ef/classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="/Users/Sleano/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/Users/Sleano/Desktop/Flsh/Flsh/app/build/intermediates/pre-dexed/debug/constraint-layout-solver-1.0.2_9beeaa3eb0d1fdec93aafae90363cf0651407865.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="/Users/Sleano/Desktop/Flsh/Flsh/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="deef0e49f597c5753672cfc9280a971ee9b58c31">
+        sha1="75abe0c6b6923be729c92d6fc6e65cf3f35d8a32">
         <dex dex="/Users/Sleano/Desktop/Flsh/Flsh/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_aeaec07550dbcaf0cfa7b3732014a3c07757883a/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Sleano/.android/build-cache/3685518bef1bd5e1ca240d4804b9b965a5c76a53/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b12cd9c87c3dfb012a911b6e38d2444ed0a65e1f">
+        <dex dex="/Users/Sleano/Desktop/Flsh/Flsh/app/build/intermediates/pre-dexed/debug/classes_b2ee17eb1e3906616f3a71410a80549822cd949b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Sleano/.android/build-cache/3c703797adf34fa59548c8768f73703e529fdec6/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a37fc31c5ceeaa4532a37358add1b189d8db4af1">
+        <dex dex="/Users/Sleano/Desktop/Flsh/Flsh/app/build/intermediates/pre-dexed/debug/classes_6a5d374eb506ee366850e5e384ddbeb0a0ef7fc2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Sleano/.android/build-cache/594e74f9b029839f1857561b917967c1c1de6124/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="58b12bdb21a84f22e0dc3b047aeceb0a546b1b44">
+        <dex dex="/Users/Sleano/Desktop/Flsh/Flsh/app/build/intermediates/pre-dexed/debug/classes_e35a7ca0dbc0348a4d66a094ce711192f5f7ab72.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Sleano/.android/build-cache/9e30aa7d87e639b82aae8d7a0385bc68b33bc17a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/Users/Sleano/Desktop/Flsh/Flsh/app/build/intermediates/pre-dexed/debug/classes_a5c322296ac03685c03deeaafa9129cc6d52e529.jar" />
     </item>
 
 </items>

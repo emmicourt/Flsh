@@ -17,6 +17,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Map;
+import android.widget.Toast;
+
 
 import emmyb.flush.Database.ProfileActivity;
 import emmyb.flush.Maps.MapsActivity;
@@ -38,6 +40,7 @@ public class ProfilePage extends AppCompatActivity {
         existingRating(MapsActivity.currentLatitude, MapsActivity.currentLongitude);
 
     }
+
 
     public void existingRating(double latitude, double longitude){
         System.out.println();
@@ -96,40 +99,37 @@ public class ProfilePage extends AppCompatActivity {
 
 
     }
-    private void updatingRating(double x, float y){
+    public void updateRating(double latitude, double longitude, float y){
+        double w = y;
         // lat, long, flout->double
-        //a.postNewRating(,);
+        //a.postNewRating(latitude, longitude, w);
     }
 
-    private void addListenerOnRatingBar() {
+    public void addListenerOnRatingBar() {
         ratingBar = (RatingBar)findViewById(R.id.UserRating);
 
         ratingBar.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-              //  updatingRating();
+                final int numStars = ratingBar.getNumStars();
+                ratingBar.getRating() ;
+                final float ratingBarStepSize = ratingBar.getStepSize();
             }
         });
     }
 
-    private void addListenerOnButton() {
+    public void addListenerOnButton() {
         ratingBar = (RatingBar)findViewById(R.id.UserRating);
         addRating = (Button)findViewById(R.id.AddRating);
 
         addRating.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  String
+                Toast.makeText(ProfilePage.this,
+                        String.valueOf(ratingBar.getRating()),
+                        Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    public void onRatingChanged(RatingBar ratingBar, double rating, boolean fromTouch) {
-
-        final int numStars = ratingBar.getNumStars();
-        ratingBar.getRating() ;
-        final double ratingBarStepSize = ratingBar.getStepSize();
-
     }
 
 }
