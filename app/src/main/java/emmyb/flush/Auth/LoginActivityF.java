@@ -22,30 +22,34 @@ import emmyb.flush.IntialScreen;
 import emmyb.flush.Maps.MapsActivity;
 import emmyb.flush.R;
 
+/**
+ *  This class is responsible for user sign in. It connects the UI to the Firebase methods.
+ *  If the sign in is successful it redirects the user to MapActivity.
+ */
+
 public class LoginActivityF extends AppCompatActivity implements View.OnClickListener{
     public static final String EXTRA_MESSAGE = "emmyb.flush";
     private static final String TAG = "LoginActivityF";
     private Button signIn;
     private EditText editTextEmail;
     private EditText editTextPassword;
-
     private ProgressDialog progressDialog;
-
     private FirebaseAuth firebaseAuth;
-
     IntialScreen mIntialScreen;
 
 
-    @Override
     /**
-     * OnCreate()
-     * Takes a boolean from Initial screen to determiine if the user is trying
+     * onCreate()
+     * required method that instantiates the database authorization and onClickListener
+     * for the buttons and field editors
+     * @param savedInstanceState - instance state
      */
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mIntialScreen = new IntialScreen();
 
-
+        // set content view and
         setContentView(R.layout.activity_login_f);
         signIn = (Button) findViewById(R.id.signIn);
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
@@ -58,23 +62,12 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
 
     }
 
-    @Override
-    public void onClick(View view) {
-        if (view == signIn) {
-            String email = editTextEmail.getText().toString().trim();
-            String password = editTextPassword.getText().toString().trim();
-            /* Firebase magic */
-            signIn(email, password);
-            /* End of firebase magic */
-        }
-    }
+    //------------------------ Firebase functions  ---------------------------------------
 
-    public void sendMessage(View view){
-        Intent login = new Intent(this, MapsActivity.class);
-        startActivity(login);
-    }
-
-    //------------------ Fire base functions  --------------------------------- //
+    /**
+     * onStart()
+     * method from Firebase tutorial that gets the current user during start up
+     */
     @Override
     public void onStart() {
         super.onStart();
@@ -82,6 +75,12 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
     }
 
+    /**
+     * signIn()
+     * method from Firebase tutorial that signs in the firebase user
+     * @param email - email for firebase user
+     * @param password - email for firebase user
+     */
     private void signIn(String email, String password){
         firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -103,7 +102,42 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
                 });
 
     }
+    //-------------------- End of Firebase functions -------------------------------------------
 
+
+
+    /**
+     * onClick()
+     * Listens for the user to click on the sign in button, then grabs the email and
+     * password from respective text box and uses these values
+     * @param view : gets the View object from on click listener
+     */
+    @Override
+    public void onClick(View view) {
+        if (view == signIn) {
+            String email = editTextEmail.getText().toString().trim();
+            String password = editTextPassword.getText().toString().trim();
+            /* Firebase magic */
+            signIn(email, password);
+            /* End of firebase magic */
+        }
+    }
+
+    /**
+     * sendMessage()
+     * This function starts the MapActivity Activity and tells the UI to go to the coresponding map
+     * layout file
+     */
+    public void sendMessage(View view){
+        Intent login = new Intent(this, MapsActivity.class);
+        startActivity(login);
+    }
+
+    /**
+     * goToMaps()
+     * This function starts the MapActivity Activity and tells the UI to go to the coresponding map
+     * layout file
+     */
     private void goToMaps() {
         Intent maps = new Intent(this, MapsActivity.class);
         startActivity(maps);

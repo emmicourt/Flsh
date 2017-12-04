@@ -24,24 +24,32 @@ import emmyb.flush.Profiles.Profile;
 
 /**
  * Created by EmmyB on 11/14/17.
+ * This class is responsible for database functions related to Profiles
  */
 
 public class ProfileActivity extends FragmentActivity {
 
     private static final String TAG = "ProfileActivity";
     private static final String REQUIRED = "Required";
-
     private DatabaseReference mDatabase  =  FirebaseDatabase.getInstance().getReference();
     private Profile newProfile;
     private double rating;
 
+    /**
+     * required function - does nothing in this case
+     * @param savedInstanceState - saved instance state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState  ){
         super.onCreate(savedInstanceState);
 
     }
 
-    // make new profile and adds it to firebase
+    /**
+     * make new profile and adds it to firebase
+     * @param latitiude - this latitue
+     * @param longitude - this long
+     */
     public void newProfile (double latitiude, double longitude) {
         newProfile = new Profile(latitiude, longitude);
 
@@ -50,13 +58,23 @@ public class ProfileActivity extends FragmentActivity {
     }
 
 
+    /**
+     * averages two
+     * @param oldRating - the rating stored in the database
+     * @param newRate - rating stored in the database
+     * @return - result of averaging these two pieces
+     */
     public double calcRating(double oldRating, double newRate){
         return (oldRating + newRate) / 2;
     }
 
-    // gets an existing profile from the database and takes a new rating from the user
-    // if the user has not already rated this particular profile then it takes an
-    // average of the existing and updates the value in firebsae
+    /**
+     * gets an existing profile from the database and takes a new rating from the user
+     * average of the existing and updates the value in firebsae
+     * @param latitude - this latitude
+     * @param longitude - this longitude
+     * @param rate - this rating
+     */
     public void postNewRating(final double latitude, final double longitude, double rate){
         final DatabaseReference ref = mDatabase.child("Profiles");
         //double oldrating = getRatingFromDatabase(latitude, longitude);
