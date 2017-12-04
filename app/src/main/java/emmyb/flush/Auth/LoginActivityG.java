@@ -7,7 +7,6 @@ package emmyb.flush.Auth;
  *  If the registration is successful it redirects the user to MapActivity.
  */
 
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,7 +26,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import emmyb.flush.IntialScreen;
-import emmyb.flush.Maps.MapsActivity;
 import emmyb.flush.R;
 
 
@@ -61,7 +59,6 @@ public class LoginActivityG extends AppCompatActivity implements View.OnClickLis
 
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
-
     }
 
     /**
@@ -97,7 +94,6 @@ public class LoginActivityG extends AppCompatActivity implements View.OnClickLis
 
         progressDialog.setMessage("Register User");
         progressDialog.show();
-
     }
 
     //------------------ Fire base functions  --------------------------------- //
@@ -113,7 +109,6 @@ public class LoginActivityG extends AppCompatActivity implements View.OnClickLis
         if (!validateForm()) {
             return;
         }
-
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -189,8 +184,6 @@ public class LoginActivityG extends AppCompatActivity implements View.OnClickLis
                 });
         // [END send_email_verification]
     }
-
-
     // ----------------- End of Firebase Functions -----------------------------------------//
 
     /**
@@ -211,7 +204,7 @@ public class LoginActivityG extends AppCompatActivity implements View.OnClickLis
      * @param view - view object
      */
     public void sendMessage(View view){
-        Intent login = new Intent(this, MapsActivity.class);
+        Intent login = new Intent(this, LoginActivityF.class);
         startActivity(login);
     }
 
@@ -220,7 +213,7 @@ public class LoginActivityG extends AppCompatActivity implements View.OnClickLis
      * starts the MapActivity and directs user to that page
      */
     private void goToMaps() {
-        Intent maps = new Intent(this, MapsActivity.class);
+        Intent maps = new Intent(this, LoginActivityF.class);
         startActivity(maps);
     }
 

@@ -97,8 +97,6 @@ public class IntialScreen extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-
-
     /* GOOGLE MAGIC ---------------------- */
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
@@ -174,7 +172,6 @@ public class IntialScreen extends AppCompatActivity implements View.OnClickListe
                     }
                 });
     }
-
 
     /**
      * goToInitial()
