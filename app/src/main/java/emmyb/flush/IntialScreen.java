@@ -1,5 +1,9 @@
 package emmyb.flush;
 
+/**
+ * This is the initial screen with three buttons that redirects the user to the correct log in page
+ */
+
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -33,8 +37,6 @@ public class IntialScreen extends AppCompatActivity implements View.OnClickListe
         GoogleApiClient.OnConnectionFailedListener{
     public static final String EXTRA_MESSAGE = "emmyb.flush";
 
-    public Boolean isLogin = true;
-
     private Button googleButt;
     private Button loginButt;
     private Button signUpButt;
@@ -44,6 +46,11 @@ public class IntialScreen extends AppCompatActivity implements View.OnClickListe
     private GoogleApiClient mGoogleApiClient;
     private FirebaseAuth mAuth;
 
+    /**
+     * required create function
+     * instantiates the on click listeners, firebase authentication, and google sign in API
+     * @param savedInstanceState - saved state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +62,6 @@ public class IntialScreen extends AppCompatActivity implements View.OnClickListe
         googleButt.setOnClickListener(this);
         loginButt.setOnClickListener(this);
         signUpButt.setOnClickListener(this);
-
         mAuth = FirebaseAuth.getInstance();
 
         // Configure sign-in to request the user's ID, email address, and basic
@@ -72,16 +78,20 @@ public class IntialScreen extends AppCompatActivity implements View.OnClickListe
                 .build();
     }
 
+    /**
+     * onClick
+     * listens to the buttons for click. Then decides which login page to direct the user
+     * based on which button is pressed.
+     * @param v - view object
+     */
     @Override
     public void onClick(View v) {
         if(v == googleButt){
             signIn();
         } else if ( v == loginButt ){
-            isLogin = true;
             Intent login = new Intent(this, LoginActivityF.class);
             startActivity(login);
         } else if (v == signUpButt){
-            isLogin = false;
             Intent login = new Intent(this, LoginActivityG.class);
             startActivity(login);
         }
@@ -116,11 +126,6 @@ public class IntialScreen extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void goToMap() {
-        Intent maps = new Intent(this, MapsActivity.class);
-        startActivity(maps);
-    }
-
     private void revokeAccess() {
         // Firebase sign out
         mAuth.signOut();
@@ -140,10 +145,6 @@ public class IntialScreen extends AppCompatActivity implements View.OnClickListe
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-    }
-
-    private void signOut(){
-        FirebaseAuth.getInstance().signOut();
     }
 
     private void signIn(){
@@ -172,5 +173,15 @@ public class IntialScreen extends AppCompatActivity implements View.OnClickListe
 
                     }
                 });
+    }
+
+
+    /**
+     * goToInitial()
+     * starts the MapActivity and directs user to that page
+     */
+    private void goToMap() {
+        Intent maps = new Intent(this, MapsActivity.class);
+        startActivity(maps);
     }
 }

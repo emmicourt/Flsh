@@ -2,6 +2,9 @@ package emmyb.flush.Auth;
 
 /**
  * Created by EmmyB on 12/2/17.
+ *
+ *  This class is responsible for registering a new user. It connects the UI to the Firebase methods.
+ *  If the registration is successful it redirects the user to MapActivity.
  */
 
 
@@ -27,29 +30,25 @@ import emmyb.flush.IntialScreen;
 import emmyb.flush.Maps.MapsActivity;
 import emmyb.flush.R;
 
-/**
- * Registration of a new user
- */
+
 public class LoginActivityG extends AppCompatActivity implements View.OnClickListener {
     public static final String EXTRA_MESSAGE = "emmyb.flush";
     private static final String TAG = "LoginActivityG";
     private Button verifyEmail;
     private EditText editTextEmail1;
     private EditText editTextPassword2;
-
-
+    private EditText editTextPassword3;
     private ProgressDialog progressDialog;
-
     private FirebaseAuth firebaseAuth;
-
     IntialScreen mIntialScreen;
 
-
-    @Override
     /**
-     * OnCreate()
-     * Takes a boolean from Initial screen to determiine if the user is trying
+     * onCreate()
+     * required method that instantiates the database authorization and onClickListener
+     * for the buttons and field editors
+     * @param savedInstanceState - instance state
      */
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mIntialScreen = new IntialScreen();
@@ -57,6 +56,7 @@ public class LoginActivityG extends AppCompatActivity implements View.OnClickLis
         verifyEmail = (Button) findViewById(R.id.verifyEmail);
         editTextEmail1 = (EditText) findViewById(R.id.editTextEmail1);
         editTextPassword2 = (EditText) findViewById(R.id.editTextPassword2);
+        editTextPassword3 = (EditText) findViewById(R.id.editTextPassword3);
         verifyEmail.setOnClickListener(this);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -64,39 +64,40 @@ public class LoginActivityG extends AppCompatActivity implements View.OnClickLis
 
     }
 
+    /**
+     * registerUser()
+     * grabs the email and password from the textEditors and check to make sure they are not empty
+     * and the passwords match. Then uses these values to call the firebase createAccount method
+     */
     private void registerUser(){
         String email = editTextEmail1.getText().toString().trim();
-        String password = editTextPassword2.getText().toString().trim();
+        String password1 = editTextPassword2.getText().toString().trim();
+        String password2 = editTextPassword3.getText().toString().trim();
 
         if(TextUtils.isEmpty(email)){
             Toast.makeText(this, "Please Enter email", Toast.LENGTH_SHORT).show();
             return;
         }
-        if(TextUtils.isEmpty(password)) {
+        if(TextUtils.isEmpty(password1)) {
             Toast.makeText(this, "Please Enter password", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(TextUtils.isEmpty(password2)) {
+            Toast.makeText(this, "Please Re-enter password", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(!password1.equals(password2)){
+            Toast.makeText(this, "Please Enter Matching Passwords", Toast.LENGTH_SHORT).show();
             return;
         }
 
         /* Firebase magic */
-        createAccount(email, password);
+        createAccount(email, password1);
         /* End of firebase magic */
 
         progressDialog.setMessage("Register User");
         progressDialog.show();
 
-    }
-
-    @Override
-    public void onClick(View view) {
-        if(view == verifyEmail) {
-            registerUser();
-            sendEmailVerification();
-        }
-    }
-
-    public void sendMessage(View view){
-        Intent login = new Intent(this, MapsActivity.class);
-        startActivity(login);
     }
 
     //------------------ Fire base functions  --------------------------------- //
@@ -130,7 +131,6 @@ public class LoginActivityG extends AppCompatActivity implements View.OnClickLis
                         }
                     }
                 });
-
     }
 
     private void signIn(String email, String password){
@@ -153,11 +153,6 @@ public class LoginActivityG extends AppCompatActivity implements View.OnClickLis
                     }
                 });
 
-    }
-
-    private void goToMaps() {
-        Intent maps = new Intent(this, MapsActivity.class);
-        startActivity(maps);
     }
 
     private boolean validateForm(){
@@ -193,6 +188,40 @@ public class LoginActivityG extends AppCompatActivity implements View.OnClickLis
                     }
                 });
         // [END send_email_verification]
+    }
+
+
+    // ----------------- End of Firebase Functions -----------------------------------------//
+
+    /**
+     * onClick()
+     * Listens for the verify email button to be clicked
+     * @param view : view object
+     */
+    @Override
+    public void onClick(View view) {
+        if(view == verifyEmail) {
+            registerUser();
+        }
+    }
+
+    /**
+     * sendMessage
+     * starts the MapActivity and directs user to that page
+     * @param view - view object
+     */
+    public void sendMessage(View view){
+        Intent login = new Intent(this, MapsActivity.class);
+        startActivity(login);
+    }
+
+    /**
+     * sendMessage
+     * starts the MapActivity and directs user to that page
+     */
+    private void goToMaps() {
+        Intent maps = new Intent(this, MapsActivity.class);
+        startActivity(maps);
     }
 
 }

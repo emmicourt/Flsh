@@ -200,121 +200,124 @@ public class MapsActivity extends AppCompatActivity implements
             addMarkersToMap(mMap);
         }
 
-        /**
-         * Gets the current location of the device, and positions the map's camera.
-         */
-        private void getDeviceLocation() {
-        /*
-         * Get the best and most recent location of the device, which may be null in rare
-         * cases when a location is not available.
-         */
-            try {
-                if (mLocationPermissionGranted) {
-                    Task<Location> locationResult = mFusedLocationProviderClient.getLastLocation();
-                    locationResult.addOnCompleteListener(this, new OnCompleteListener<Location>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Location> task) {
-                            if (task.isSuccessful()) {
-                                // Set the map's camera position to the current location of the device.
-                                mLastKnownLocation = task.getResult();
-                                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-                                        new LatLng(mLastKnownLocation.getLatitude(),
-                                                mLastKnownLocation.getLongitude()), DEFAULT_ZOOM));
-                            } else {
-                                Log.d(TAG, "Current location is null. Using defaults.");
-                                Log.e(TAG, "Exception: %s", task.getException());
-                                mMap.moveCamera(CameraUpdateFactory
-                                        .newLatLngZoom(mDefaultLocation, DEFAULT_ZOOM));
-                                mMap.getUiSettings().setMyLocationButtonEnabled(false);
-                            }
+    /**
+     * Gets the current location of the device, and positions the map's camera.
+     */
+    private void getDeviceLocation() {
+    /*
+     * Get the best and most recent location of the device, which may be null in rare
+     * cases when a location is not available.
+     */
+        try {
+            if (mLocationPermissionGranted) {
+                Task<Location> locationResult = mFusedLocationProviderClient.getLastLocation();
+                locationResult.addOnCompleteListener(this, new OnCompleteListener<Location>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Location> task) {
+                        if (task.isSuccessful()) {
+                            // Set the map's camera position to the current location of the device.
+                            mLastKnownLocation = task.getResult();
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                    new LatLng(mLastKnownLocation.getLatitude(),
+                                            mLastKnownLocation.getLongitude()), DEFAULT_ZOOM));
+                        } else {
+                            Log.d(TAG, "Current location is null. Using defaults.");
+                            Log.e(TAG, "Exception: %s", task.getException());
+                            mMap.moveCamera(CameraUpdateFactory
+                                    .newLatLngZoom(mDefaultLocation, DEFAULT_ZOOM));
+                            mMap.getUiSettings().setMyLocationButtonEnabled(false);
                         }
-                    });
-                }
-            } catch (SecurityException e)  {
-                Log.e("Exception: %s", e.getMessage());
-            }
-        }
-
-
-        /**
-         * Prompts the user for permission to use the device location.
-         */
-        private void getLocationPermission() {
-        /*
-         * Request location permission, so that we can get the location of the
-         * device. The result of the permission request is handled by a callback,
-         * onRequestPermissionsResult.
-         */
-            if (ContextCompat.checkSelfPermission(this.getApplicationContext(),
-                    android.Manifest.permission.ACCESS_FINE_LOCATION)
-                    == PackageManager.PERMISSION_GRANTED) {
-                mLocationPermissionGranted = true;
-            } else {
-                ActivityCompat.requestPermissions(this,
-                        new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
-                        PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
-            }
-        }
-
-        /**
-         * Handles the result of the request for location permissions.
-         */
-        @Override
-        public void onRequestPermissionsResult(int requestCode,
-                                               @NonNull String permissions[],
-                                               @NonNull int[] grantResults) {
-            mLocationPermissionGranted = false;
-            switch (requestCode) {
-                case PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION: {
-                    // If request is cancelled, the result arrays are empty.
-                    if (grantResults.length > 0
-                            && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                        mLocationPermissionGranted = true;
                     }
-                }
+                });
             }
-            updateLocationUI();
+        } catch (SecurityException e)  {
+            Log.e("Exception: %s", e.getMessage());
         }
-
-        /**
-         * Updates the map's UI settings based on whether the user has granted location permission.
-         */
-        private void updateLocationUI() {
-            if (mMap == null) {
-                return;
-            }
-            try {
-                if (mLocationPermissionGranted) {
-                    mMap.setMyLocationEnabled(true);
-                    mMap.getUiSettings().setMyLocationButtonEnabled(true);
-                } else {
-                    mMap.setMyLocationEnabled(false);
-                    mMap.getUiSettings().setMyLocationButtonEnabled(false);
-                    mLastKnownLocation = null;
-                    getLocationPermission();
-                }
-            } catch (SecurityException e)  {
-                Log.e("Exception: %s", e.getMessage());
-            }
-        }
-
-        /**
-         * When user long clicks, add a marker to map
-         * @param position
-         */
-        public void onMapLongClick(LatLng position){
-            if(!addClickFlag) {
-                mMap.addMarker(new MarkerOptions().position(position));
-                double latitudeDec = position.latitude;
-                double longitudeDec = position.longitude;
-                mProfileActivity.newProfile(latitudeDec, longitudeDec);
-                addClickFlag = true;
-            }
-        }
+    }
 
 
     /**
-     *
+     * Prompts the user for permission to use the device location.
+     */
+    private void getLocationPermission() {
+    /*
+     * Request location permission, so that we can get the location of the
+     * device. The result of the permission request is handled by a callback,
+     * onRequestPermissionsResult.
+     */
+        if (ContextCompat.checkSelfPermission(this.getApplicationContext(),
+                android.Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            mLocationPermissionGranted = true;
+        } else {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                    PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+        }
+    }
+
+    /**
+     * Handles the result of the request for location permissions.
+     */
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String permissions[],
+                                           @NonNull int[] grantResults) {
+        mLocationPermissionGranted = false;
+        switch (requestCode) {
+            case PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    mLocationPermissionGranted = true;
+                }
+            }
+        }
+        updateLocationUI();
+    }
+
+    /**
+     * Updates the map's UI settings based on whether the user has granted location permission.
+     */
+    private void updateLocationUI() {
+        if (mMap == null) {
+            return;
+        }
+        try {
+            if (mLocationPermissionGranted) {
+                mMap.setMyLocationEnabled(true);
+                mMap.getUiSettings().setMyLocationButtonEnabled(true);
+            } else {
+                mMap.setMyLocationEnabled(false);
+                mMap.getUiSettings().setMyLocationButtonEnabled(false);
+                mLastKnownLocation = null;
+                getLocationPermission();
+            }
+        } catch (SecurityException e)  {
+            Log.e("Exception: %s", e.getMessage());
+        }
+    }
+
+    /**
+     * When user long clicks, add a marker to map
+     * @param position
+     */
+    public void onMapLongClick(LatLng position){
+        if(!addClickFlag) {
+            mMap.addMarker(new MarkerOptions().position(position));
+            double latitudeDec = position.latitude;
+            double longitudeDec = position.longitude;
+            mProfileActivity.newProfile(latitudeDec, longitudeDec);
+            addClickFlag = true;
+        }
+    }
+
+
+    /**
+     * addMarkersToMap()
+     * queries the database for all surrounding bathrooms and adds markers to the
+     * map at those postions
+     * @param map - this map
      */
     private void addMarkersToMap(final GoogleMap map){
         mProfileRef.addListenerForSingleValueEvent(
@@ -334,9 +337,9 @@ public class MapsActivity extends AppCompatActivity implements
                             latt.add(Double.parseDouble(String.valueOf(singlePlace.get("latitude"))));
                             longg.add(Double.parseDouble(String.valueOf(singlePlace.get("longitude"))));
                             //if(isInBound(latt.get(n), longg.get(n))){
-                                LatLng pos = new LatLng(latt.get(n), longg.get(n));
-                                map.addMarker(new MarkerOptions().position(pos));
-                                n++;
+                            LatLng pos = new LatLng(latt.get(n), longg.get(n));
+                            map.addMarker(new MarkerOptions().position(pos));
+                            n++;
                             //}
                         }
                         //double latt = collectLatt((Map<String,Object>)dataSnapshot.getValue());
@@ -353,38 +356,33 @@ public class MapsActivity extends AppCompatActivity implements
 
     }
 
-    /*private double collectLatt(Map<String,Object> profiles){
-        ArrayList<Long> latt = new ArrayList<>();
-
-        for(Map.Entry<String,Object> entry : profiles.entrySet()){
-            //Get a profile map
-            Map singlePlace = (Map) entry.getValue();
-            //get latitude and append to list
-            latt.add((Long)singlePlace.get("latitude"));
-        }
-
-    }
-    private double collectLongg(Map<String,Object> profiles){
-        ArrayList<Long> longg = new ArrayList<>();
-
-        for(Map.Entry<String,Object> entry : profiles.entrySet()){
-            //Get a profile map
-            Map singlePlace = (Map) entry.getValue();
-            //get latitude and append to list
-            longg.add((Long)singlePlace.get("longitude"));
-        }
-        return
-    }*/
+    /**
+     * isInBound()
+     * supposed to check to see if a given latitude and longitude are withing the bounds of the
+     * current map view
+     * @param latt
+     * @param longg
+     * @return
+     */
     private boolean isInBound(double latt, double longg) {
         LatLng currentPosition = new LatLng(latt, longg);
         LatLngBounds bounds = mMap.getProjection().getVisibleRegion().latLngBounds;
         return  bounds.contains(currentPosition);
     }
 
+    /**
+     * signOut
+     * firebase authentication API method to sign out
+     */
     private void signOut(){
             FirebaseAuth.getInstance().signOut();
         }
 
+    /**
+     * onCameraIdle
+     * checks when the user stops moving then map, then updates the markers in the area
+     * by calling add markers to map again
+      */
     @Override
     public void onCameraIdle() {
         Toast.makeText(this, "The camera has stopped moving.",
@@ -393,6 +391,13 @@ public class MapsActivity extends AppCompatActivity implements
         addMarkersToMap(mMap);
     }
 
+    /**
+     * onMarkerClick()
+     * If a marker is clicked, the position is recorded into current lat and long
+     * then the user is redirected to
+     * @param marker - gets marker from map
+     * @return - boolean if the aformentioned thing is
+     */
     @Override
     public boolean onMarkerClick(Marker marker) {
         Intent profilePage = new Intent(this, ProfilePage.class);
@@ -401,8 +406,6 @@ public class MapsActivity extends AppCompatActivity implements
         startActivity(profilePage);
         currentLatitude = position.latitude;
         currentLongitude = position.longitude;
-        //try to retrieve the data from the marker
-        //String info = (String) marker.getTag();
 
         return false;
     }

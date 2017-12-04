@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.Map;
 import android.widget.Toast;
 
-
 import emmyb.flush.Database.ProfileActivity;
 import emmyb.flush.Maps.MapsActivity;
 
@@ -30,6 +29,12 @@ public class ProfilePage extends AppCompatActivity {
     private Button addRating;
     RatingBar displayRating;
     private DatabaseReference mDatabase  =  FirebaseDatabase.getInstance().getReference();
+
+    /**
+     * onCreate
+     * Instantiates the
+     * @param savedInstanceState - saved state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,18 +43,27 @@ public class ProfilePage extends AppCompatActivity {
         addListenerOnRatingBar();
         addListenerOnButton();
         existingRating(MapsActivity.currentLatitude, MapsActivity.currentLongitude);
+
       //  updateRating(MapsActivity.currentLatitude, MapsActivity.currentLongitude, ratingBar.getRating() );
 
+
     }
 
-
+    /**
+     * calls the get rating from database
+     * @param latitude - this latitude
+     * @param longitude - this longtude
+     */
     public void existingRating(double latitude, double longitude){
-        System.out.println();
         getRatingFromDatabase(latitude,longitude);
-
     }
-    // queries the database for a profile based
-    // then creates and returns a profile object
+
+    /**
+     * Finds the Profile in the database based on latitude and longitude
+     * and returns the rating stored in the database
+     * @param latitude - this latitude
+     * @param longitude - this longitude
+     */
     public void getRatingFromDatabase(final double latitude, final double longitude){
         final DatabaseReference ref = mDatabase.child("Profiles");
         ref.addListenerForSingleValueEvent(
@@ -59,16 +73,11 @@ public class ProfilePage extends AppCompatActivity {
                         ArrayList<Double> latt = new ArrayList<>();
                         ArrayList<Double> longg = new ArrayList<>();
                         ArrayList<Double> ratings = new ArrayList<>();
-                        //double latt = 0;
-                        //double longg = 0;
                         int n = 0;
                         Map<String,Object> profiles = (Map<String,Object>)dataSnapshot.getValue();
 
                         for(Map.Entry<String,Object> entry : profiles.entrySet()){
-                            //Get a profile map
                             Map singlePlace = (Map) entry.getValue();
-                            //get latitude and append to list
-                            //String a = (String)singlePlace.get("latitude");
                             latt.add(Double.parseDouble(String.valueOf(singlePlace.get("latitude"))));
                             longg.add(Double.parseDouble(String.valueOf(singlePlace.get("longitude"))));
                             ratings.add(Double.parseDouble(String.valueOf(singlePlace.get("rating"))));
@@ -78,28 +87,28 @@ public class ProfilePage extends AppCompatActivity {
                             double rat = ratings.get(n);
 
                             if((Double.doubleToLongBits(getLatt) == Double.doubleToLongBits(latitude))&&((Double.doubleToLongBits(getLongg) == Double.doubleToLongBits(longitude)))){
-                                //System.out.println("trueee though");
                                 final float f = (float)rat;
                                 //System.out.println("hiiiiiiiii"+f+"whattttt");
+
                                 displayRating.setRating(f);
                             }
                             n++;
-
                         }
-                        //double latt = collectLatt((Map<String,Object>)dataSnapshot.getValue());
-                        //collectLongg((Map<String,Object>)dataSnapshot.getValue()));
                     }
 
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
-
                     }
                 }
-
         );
-
-
     }
+
+    /**
+     * updates the data base rating based on user input
+     * @param latitude - the lat
+     * @param longitude - the long
+     * @param y - a float
+     */
     public void updateRating(double latitude, double longitude, float y){
         double w = y;
         // lat, long, flout->double
@@ -107,6 +116,9 @@ public class ProfilePage extends AppCompatActivity {
 
     }
 
+    /**
+     * listens for user input on rating bar
+     */
     public void addListenerOnRatingBar() {
         ratingBar = (RatingBar)findViewById(R.id.UserRating);
 
@@ -120,6 +132,9 @@ public class ProfilePage extends AppCompatActivity {
         });
     }
 
+    /**
+     * listens to submit button
+     */
     public void addListenerOnButton() {
         ratingBar = (RatingBar)findViewById(R.id.UserRating);
         addRating = (Button)findViewById(R.id.AddRating);
