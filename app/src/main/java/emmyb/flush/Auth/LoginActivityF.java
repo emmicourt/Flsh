@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -37,7 +36,6 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
     private FirebaseAuth firebaseAuth;
     IntialScreen mIntialScreen;
 
-
     /**
      * onCreate()
      * required method that instantiates the database authorization and onClickListener
@@ -49,7 +47,7 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         mIntialScreen = new IntialScreen();
 
-        // set content view and
+        // set content view
         setContentView(R.layout.activity_login_f);
         signIn = (Button) findViewById(R.id.signIn);
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
@@ -57,13 +55,13 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         signIn.setOnClickListener(this);
 
+        // instantiates Firebase authentication
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
 
     }
 
     //------------------------ Firebase functions  ---------------------------------------
-
     /**
      * onStart()
      * method from Firebase tutorial that gets the current user during start up
@@ -103,9 +101,6 @@ public class LoginActivityF extends AppCompatActivity implements View.OnClickLis
 
     }
     //-------------------- End of Firebase functions -------------------------------------------
-
-
-
     /**
      * onClick()
      * Listens for the user to click on the sign in button, then grabs the email and

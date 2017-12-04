@@ -11,11 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -48,7 +43,6 @@ import java.util.Map;
 import emmyb.flush.Database.ProfileActivity;
 import emmyb.flush.IntialScreen;
 import emmyb.flush.ProfilePage;
-import emmyb.flush.Profiles.Profile;
 import emmyb.flush.R;
 
 public class MapsActivity extends AppCompatActivity implements
@@ -56,7 +50,6 @@ public class MapsActivity extends AppCompatActivity implements
         OnMapLongClickListener,
         GoogleMap.OnCameraIdleListener,
         GoogleMap.OnMarkerClickListener {
-
 
         public static double currentLatitude;
         public static double currentLongitude;
@@ -235,7 +228,6 @@ public class MapsActivity extends AppCompatActivity implements
         }
     }
 
-
     /**
      * Prompts the user for permission to use the device location.
      */
@@ -300,7 +292,7 @@ public class MapsActivity extends AppCompatActivity implements
 
     /**
      * When user long clicks, add a marker to map
-     * @param position
+     * @param position - latitude and longitude coordinates
      */
     public void onMapLongClick(LatLng position){
         if(!addClickFlag) {
@@ -311,7 +303,6 @@ public class MapsActivity extends AppCompatActivity implements
             addClickFlag = true;
         }
     }
-
 
     /**
      * addMarkersToMap()
@@ -331,24 +322,18 @@ public class MapsActivity extends AppCompatActivity implements
                         for(Map.Entry<String,Object> entry : profiles.entrySet()){
                             //Get a profile map
                             Map singlePlace = (Map) entry.getValue();
+
                             //get latitude and append to list
-                            //String a = (String)singlePlace.get("latitude");
-                            //String b = (String)singlePlace.get("longitude");
                             latt.add(Double.parseDouble(String.valueOf(singlePlace.get("latitude"))));
                             longg.add(Double.parseDouble(String.valueOf(singlePlace.get("longitude"))));
-                            //if(isInBound(latt.get(n), longg.get(n))){
                             LatLng pos = new LatLng(latt.get(n), longg.get(n));
                             map.addMarker(new MarkerOptions().position(pos));
                             n++;
-                            //}
                         }
-                        //double latt = collectLatt((Map<String,Object>)dataSnapshot.getValue());
-                        //collectLongg((Map<String,Object>)dataSnapshot.getValue()));
                     }
 
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
-
                     }
                 }
 
@@ -360,9 +345,9 @@ public class MapsActivity extends AppCompatActivity implements
      * isInBound()
      * supposed to check to see if a given latitude and longitude are withing the bounds of the
      * current map view
-     * @param latt
-     * @param longg
-     * @return
+     * @param latt - latitude
+     * @param longg - longitude
+     * @return - returns LatLng
      */
     private boolean isInBound(double latt, double longg) {
         LatLng currentPosition = new LatLng(latt, longg);
@@ -385,9 +370,6 @@ public class MapsActivity extends AppCompatActivity implements
       */
     @Override
     public void onCameraIdle() {
-        Toast.makeText(this, "The camera has stopped moving.",
-                Toast.LENGTH_SHORT).show();
-
         addMarkersToMap(mMap);
     }
 
@@ -396,17 +378,15 @@ public class MapsActivity extends AppCompatActivity implements
      * If a marker is clicked, the position is recorded into current lat and long
      * then the user is redirected to
      * @param marker - gets marker from map
-     * @return - boolean if the aformentioned thing is
+     * @return - boolean if the aforementioned thing is
      */
     @Override
     public boolean onMarkerClick(Marker marker) {
         Intent profilePage = new Intent(this, ProfilePage.class);
         LatLng position = marker.getPosition();
-
         startActivity(profilePage);
         currentLatitude = position.latitude;
         currentLongitude = position.longitude;
-
         return false;
     }
 }

@@ -1,6 +1,5 @@
 package emmyb.flush;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -43,16 +42,12 @@ public class ProfilePage extends AppCompatActivity {
         addListenerOnRatingBar();
         addListenerOnButton();
         existingRating(MapsActivity.currentLatitude, MapsActivity.currentLongitude);
-
-      //  updateRating(MapsActivity.currentLatitude, MapsActivity.currentLongitude, ratingBar.getRating() );
-
-
     }
 
     /**
      * calls the get rating from database
      * @param latitude - this latitude
-     * @param longitude - this longtude
+     * @param longitude - this longitude
      */
     public void existingRating(double latitude, double longitude){
         getRatingFromDatabase(latitude,longitude);
@@ -81,21 +76,17 @@ public class ProfilePage extends AppCompatActivity {
                             latt.add(Double.parseDouble(String.valueOf(singlePlace.get("latitude"))));
                             longg.add(Double.parseDouble(String.valueOf(singlePlace.get("longitude"))));
                             ratings.add(Double.parseDouble(String.valueOf(singlePlace.get("rating"))));
-                            System.out.print("heyyyyyyyyy!!!!!!!!!!!!");
                             double getLatt = latt.get(n);
                             double getLongg = longg.get(n);
                             double rat = ratings.get(n);
 
                             if((Double.doubleToLongBits(getLatt) == Double.doubleToLongBits(latitude))&&((Double.doubleToLongBits(getLongg) == Double.doubleToLongBits(longitude)))){
                                 final float f = (float)rat;
-                                //System.out.println("hiiiiiiiii"+f+"whattttt");
-
                                 displayRating.setRating(f);
                             }
                             n++;
                         }
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
                     }
@@ -105,17 +96,14 @@ public class ProfilePage extends AppCompatActivity {
 
     /**
      * updates the data base rating based on user input
-     * @param latitude - the lat
-     * @param longitude - the long
+     * @param latitude - the latitude
+     * @param longitude - the longitude
      * @param y - a float
      */
     public void updateRating(double latitude, double longitude, float y){
         double w = y;
-        // lat, long, flout->double
         a.postNewRating(latitude, longitude, w);
-
     }
-
     /**
      * listens for user input on rating bar
      */
@@ -145,7 +133,5 @@ public class ProfilePage extends AppCompatActivity {
                 startActivity(getIntent());
             }
         });
-
     }
-
 }
