@@ -385,9 +385,6 @@ public class MapsActivity extends AppCompatActivity implements
       */
     @Override
     public void onCameraIdle() {
-        Toast.makeText(this, "The camera has stopped moving.",
-                Toast.LENGTH_SHORT).show();
-
         addMarkersToMap(mMap);
     }
 
