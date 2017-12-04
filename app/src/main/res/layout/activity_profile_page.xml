@@ -25,29 +25,31 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="90dp"
         android:text="Submit"
+        android:onClick="backToMaps"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <RatingBar
         android:id="@+id/UserRating"
-        android:layout_width="282dp"
+        android:layout_width="243dp"
         android:layout_height="58dp"
         android:layout_marginBottom="19dp"
         android:numStars="5"
+        android:stepSize="0.5"
         app:layout_constraintBottom_toTopOf="@+id/AddRating"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <RatingBar
         android:id="@+id/OverallRating"
-        android:layout_width="wrap_content"
+        android:layout_width="243dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="88dp"
         android:layout_marginTop="64dp"
         android:isIndicator="true"
         android:numStars="5"
-        android:stepSize=".5"
+        android:stepSize="0.5"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

@@ -125,9 +125,6 @@ public class ProfilePage extends AppCompatActivity {
         ratingBar.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                final int numStars = ratingBar.getNumStars();
-                ratingBar.getRating() ;
-                final float ratingBarStepSize = ratingBar.getStepSize();
             }
         });
     }
@@ -148,6 +145,7 @@ public class ProfilePage extends AppCompatActivity {
                 startActivity(getIntent());
             }
         });
+
     }
 
 }
