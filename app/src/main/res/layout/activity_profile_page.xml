@@ -52,6 +52,7 @@
         android:layout_marginTop="77dp"
         android:isIndicator="true"
         android:numStars="5"
+        android:stepSize=".5"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintLeft_toLeftOf="parent"

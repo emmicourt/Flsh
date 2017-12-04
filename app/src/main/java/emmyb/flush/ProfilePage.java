@@ -38,6 +38,7 @@ public class ProfilePage extends AppCompatActivity {
         addListenerOnRatingBar();
         addListenerOnButton();
         existingRating(MapsActivity.currentLatitude, MapsActivity.currentLongitude);
+      //  updateRating(MapsActivity.currentLatitude, MapsActivity.currentLongitude, ratingBar.getRating() );
 
     }
 
@@ -79,7 +80,7 @@ public class ProfilePage extends AppCompatActivity {
                             if((Double.doubleToLongBits(getLatt) == Double.doubleToLongBits(latitude))&&((Double.doubleToLongBits(getLongg) == Double.doubleToLongBits(longitude)))){
                                 //System.out.println("trueee though");
                                 final float f = (float)rat;
-                                System.out.println("hiiiiiiiii"+f+"whattttt");
+                                //System.out.println("hiiiiiiiii"+f+"whattttt");
                                 displayRating.setRating(f);
                             }
                             n++;
@@ -102,7 +103,8 @@ public class ProfilePage extends AppCompatActivity {
     public void updateRating(double latitude, double longitude, float y){
         double w = y;
         // lat, long, flout->double
-        //a.postNewRating(latitude, longitude, w);
+        a.postNewRating(latitude, longitude, w);
+
     }
 
     public void addListenerOnRatingBar() {
@@ -125,9 +127,10 @@ public class ProfilePage extends AppCompatActivity {
         addRating.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ProfilePage.this,
-                        String.valueOf(ratingBar.getRating()),
-                        Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProfilePage.this, "Thanks for the Rating", Toast.LENGTH_SHORT).show();
+                updateRating(MapsActivity.currentLatitude, MapsActivity.currentLongitude, ratingBar.getRating());
+                finish();
+                startActivity(getIntent());
             }
         });
     }

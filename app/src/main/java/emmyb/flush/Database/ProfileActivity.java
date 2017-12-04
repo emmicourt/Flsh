@@ -60,36 +60,68 @@ public class ProfileActivity extends FragmentActivity {
     // gets an existing profile from the database and takes a new rating from the user
     // if the user has not already rated this particular profile then it takes an
     // average of the existing and updates the value in firebsae
-    public void postNewRating(final double latitude, final double longitude, double rate){
+    public void postNewRating(final double latitude, final double longitude,final double rate){
         final DatabaseReference ref = mDatabase.child("Profiles");
         //double oldrating = getRatingFromDatabase(latitude, longitude);
-        double oldrating = 0;
-        final double rating = calcRating(oldrating, rate);
 
 
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                double lati;
-                double longg;
-                for (DataSnapshot profileSnapshot: dataSnapshot.getChildren()) {
-                    lati = (Double) profileSnapshot.child("latitude").getValue();
-                    longg = (Double) profileSnapshot.child("longitude").getValue();
+        ref.addListenerForSingleValueEvent(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        ArrayList<Double> latt = new ArrayList<>();
+                        ArrayList<Double> longg = new ArrayList<>();
+                        ArrayList<Double> ratings = new ArrayList<>();
+                        ArrayList<String> keys = new ArrayList<>();
+                        //double latt = 0;
+                        //double longg = 0;
+                        String wantKey;
+                        int n = 0;
+                        Map<String,Object> profiles = (Map<String,Object>)dataSnapshot.getValue();
 
-                    if (lati == latitude && longg == longitude){
-                        String key = profileSnapshot.getKey();
+                        for(Map.Entry<String,Object> entry : profiles.entrySet()){
+                            //Get a profile map
+                            Map singlePlace = (Map) entry.getValue();
+                            //get latitude and append to list
+                            //String a = (String)singlePlace.get("latitude");
+                            latt.add(Double.parseDouble(String.valueOf(singlePlace.get("latitude"))));
+                            longg.add(Double.parseDouble(String.valueOf(singlePlace.get("longitude"))));
+                            ratings.add(Double.parseDouble(String.valueOf(singlePlace.get("rating"))));
+                            //keys.add(String.valueOf(singlePlace()));
+                            double getLatt = latt.get(n);
+                            double getLongg = longg.get(n);
+                            double rat = ratings.get(n);
 
-                        ref.child(key).child("rating").setValue(rating);
+
+                            if((Double.doubleToLongBits(getLatt) == Double.doubleToLongBits(latitude))&&((Double.doubleToLongBits(getLongg) == Double.doubleToLongBits(longitude)))){
+                                //System.out.println("trueee though");
+                              //  final float f = (float)rat;
+                                double average = calcRating(rat,rate);
+                                System.out.println("ASDFSHSGHDF" + rate);
+                                wantKey = entry.getKey();
+                                ref.child(wantKey).child("rating").setValue(average);
+                                System.out.println("@@@@@@@@@@@@@@@@HIII"+average+"hiiii"+wantKey);
+                                //String wantKey = entry.getKey().toString();
+                               // String wantKey = (String.valueOf(singlePlace.get("latitude"))).getParent();
+                                //wantKey = (String.valueOf(singlePlace.get("longitude")).getKey());
+                                //System.out.println("YOOO" +wantKey+ "YODF");
+                               // wantKey.child(wantKey).setValue(average);
+                               // displayRating.setRating(f);
+                            }
+                            n++;
+
+                        }
+                        //double latt = collectLatt((Map<String,Object>)dataSnapshot.getValue());
+                        //collectLongg((Map<String,Object>)dataSnapshot.getValue()));
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
                     }
                 }
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-
-        });
+        );
 
 
     }
